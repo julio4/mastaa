@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
-
+import { useRouter } from "next/router";
 import { Heading } from '@chakra-ui/react';
 import { Box, SimpleGrid} from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
-import styles from '@/styles/page1/options.module.css';
+import styles from '@/styles/start/options.module.css';
 import CustomCard from '../../../components/customCard';
 
 import { Step } from '@/types/enums';
@@ -14,6 +14,7 @@ interface QuestionsProps {
 };
 
 const Options = (props: QuestionsProps) => {
+    const router = useRouter();
     // const [currentLevel, setCurrentLevel] = useState(OnboardingLevel.Level);
 
     // const updateCurrentLevel = (level: string) => {
@@ -27,17 +28,19 @@ const Options = (props: QuestionsProps) => {
 
     return (
         <Box className={styles.wrapper}>
-            <Heading as='h3' size='lg'>
-                Titre explicatif ici
+            <Heading as='h4' size='lg'>
+                Choose if you want to sponsor gas or enable swap
             </Heading>
             <SimpleGrid className={styles.grid} spacing={20} columns={2} paddingX={20}>
                 <CustomCard
-                    title={'Sponsor with ETH'}
-                    summary={'summary ?'}
+                    title={'Sponsor'}
+                    summary={'Pay gas for your users'}
+                    /* il faut mettre un truc onclick ici pour push vers *** avec le routeur */  
                 />
                 <CustomCard
-                    title={'Allow user to user another token'}
-                    summary={'summary ?'}
+                    title={'Swap'}
+                    summary={'User can pay gas with another token than ETH'}
+                    /* pareil ici */
                 />
             </SimpleGrid>
         </Box>
