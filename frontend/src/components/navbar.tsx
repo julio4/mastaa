@@ -1,7 +1,7 @@
 import { Flex, Spacer, Box, Link, IconButton,Button } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-import ModeToggler from "../../components/modeToggler";
+import ModeToggler from "./modeToggler";
 
 
 const Navbar = () => {

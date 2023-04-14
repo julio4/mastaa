@@ -2,7 +2,7 @@
 import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
 
 import { Step } from '@/types/enums';
-import styles from '@/styles/onboarding/progressionBar.module.css';
+import styles from '@/styles/progressionBar.module.css';
 
 interface ProgessionBarProps {
     activeStep: Step;

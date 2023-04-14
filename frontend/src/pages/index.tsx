@@ -69,7 +69,7 @@ export default function LandingPage() {
             </Heading>
             <Button
               size="lg"
-              onClick={() => router.push("/app")}
+              onClick={() => router.push("/app/start")}
               transition="all 0.3s"
               bgGradient={useColorModeValue(
                 "linear(to-r, yellow.200, orange.300)",
