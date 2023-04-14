@@ -1,10 +1,16 @@
 import Head from 'next/head';
-import Onboarding from './page1';
 import ProgressionBar from './progressionBar';
 import { Step } from '@/types/enums';
+import { ReactNode } from "react";
 
+import styles from '@/styles/home.module.css';
+// import Navbar from '../../components/navbar';
 
-const Home = () => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const activeStep = Step.Step1;
   return (
     <>
@@ -15,12 +21,12 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Navbar /> */}
-      <main>
+      <main className={styles.main}>
         <ProgressionBar activeStep={activeStep} />
-        <Onboarding />
+        {children}
       </main>
     </>
   );
 }
 
-export default Home;
+export default Layout;
