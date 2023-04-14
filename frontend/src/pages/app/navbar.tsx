@@ -1,5 +1,8 @@
-import { Flex, Spacer, Box, Link, IconButton } from "@chakra-ui/react";
+import { Flex, Spacer, Box, Link, IconButton,Button } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+
+import ModeToggler from "../../components/modeToggler";
+
 
 const Navbar = () => {
   return (
@@ -29,6 +32,22 @@ const Navbar = () => {
         <Link href="/contact" mr={6}>
           Contact
         </Link>
+      </Box>
+
+      <Box pos={"fixed"} top="0" right="0" p={4}>
+        <ModeToggler />
+      </Box>
+      <Box display={{
+        base: "none",
+        md: "block"
+      }}>
+        <Button
+          size="lg"
+          icon={<HamburgerIcon />}
+          backgroundColor="transparent"
+          _hover={{ backgroundColor: "transparent" }}
+          href="/dashboard"
+        />
       </Box>
     </Flex>
   );
