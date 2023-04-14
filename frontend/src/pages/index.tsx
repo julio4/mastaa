@@ -11,7 +11,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import ModeToggler from "../components/modeToggler";
+import ModeToggler from "../components/Layout/modeToggler";
 
 
 // importing landing page image from public folder
