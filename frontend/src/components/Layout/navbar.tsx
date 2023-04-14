@@ -1,12 +1,30 @@
-import { Flex, Spacer, Box, Link, IconButton,Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Box,
+  Link,
+  IconButton,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 import ModeToggler from "./modeToggler";
 
-
 const Navbar = () => {
   return (
-    <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="teal.500" color="white">
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      padding="1.5rem"
+      bgGradient={useColorModeValue(
+        "linear(to-r, orange.100, whiteAlpha.200)",
+        "linear(to-r, orange.800, whiteAlpha.400)"
+      )}
+      color={useColorModeValue("gray.700", "gray.200")}
+    >
       <Box display={{ base: "block", md: "none" }}>
         <IconButton
           aria-label="Open menu"
@@ -17,8 +35,8 @@ const Navbar = () => {
         />
       </Box>
       <Box>
-        <Link href="/" fontSize="2xl" fontWeight="bold" color="white">
-          My App
+        <Link href="/" fontSize="2xl" fontWeight="bold">
+          Mastaa
         </Link>
       </Box>
       <Spacer />
@@ -32,12 +50,10 @@ const Navbar = () => {
         <Link href="/contact" mr={6}>
           Contact
         </Link>
-      </Box>
-
-      <Box pos={"fixed"} top="0" right="0" p={4}>
         <ModeToggler />
       </Box>
-      <Box display={{
+
+      {/* <Box display={{
         base: "none",
         md: "block"
       }}>
@@ -48,7 +64,7 @@ const Navbar = () => {
           _hover={{ backgroundColor: "transparent" }}
           href="/dashboard"
         />
-      </Box>
+      </Box> */}
     </Flex>
   );
 };
