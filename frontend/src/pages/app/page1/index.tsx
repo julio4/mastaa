@@ -2,12 +2,12 @@
 import { useState } from 'react';
 
 import { Step } from '@/types/enums';
-import ProgressionBar from './progressionBar';
-import Questions from './questions'
+import Options from './options';
 import { Box } from '@chakra-ui/react';
 
-import styles from '@/styles/onboarding/onboarding.module.css';
+import styles from '@/styles/page1/index.module.css';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
+import ContractAddress from './contractAddress';
 
 const Onboarding = () => {
     const [activeStep, setActiveStep] = useState(Step.Step1);
@@ -19,8 +19,8 @@ const Onboarding = () => {
 
     return (
         <Box className={styles.main}>
-            <ProgressionBar activeStep={activeStep} />
-            <Questions setActiveStep={setActiveStep} />
+            <ContractAddress />
+            <Options setActiveStep={setActiveStep} />
             {/* <Box className={styles.chevronIcon} onClick={updateActiveStep}> */}
             <Box className={styles.chevronIcon}>
                 <ChevronLeftIcon />
