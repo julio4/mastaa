@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 import { Step } from '@/types/enums';
@@ -8,7 +7,7 @@ import { Box } from '@chakra-ui/react';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ContractAddress from './contractAddress';
 
-import styles from '@/styles/page1/index.module.css';
+import styles from '@/styles/start/index.module.css';
 import Layout from '..';
 
 const Start = () => {
