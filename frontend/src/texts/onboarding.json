@@ -1,0 +1,302 @@
+
+{
+    "level": {
+        "title": "What level are you ?",
+        "cards": [
+            {
+                "title": "Beginner",
+                "summary": "I am a Beginner",
+                "footer": "I am a footer",
+                "level": "beginner"
+            },
+            {
+                "title": "Intermediate",
+                "summary": "I am an Intermediate",
+                "footer": "I am a footer",
+                "level": "intermediate"
+            },
+            {
+                "title": "Advanced",
+                "summary": "I am an Advanced",
+                "footer": "I am a footer",
+                "level": "advanced"
+            }
+        ]
+    },
+    "beginner": {
+        "title": "What kind of beginner are you ?",
+        "cards": [
+            {
+                "title": "Beginner 1",
+                "summary": "I am a Beginner 1",
+                "footer": "I am a footer",
+                "level": "beginner1"
+            },
+            {
+                "title": "Beginner 2",
+                "summary": "I am an Beginner 2",
+                "footer": "I am a footer",
+                "level": "beginner2"
+            },
+            {
+                "title": "Beginner 3",
+                "summary": "I am an Beginner 3",
+                "footer": "I am a footer",
+                "level": "beginner3"
+            }
+        ]
+    },
+    "intermediate": {
+        "title": "What kind of intermediate are you ?",
+        "cards": [
+            {
+                "title": "intermediate 1",
+                "summary": "I am a intermediate 1",
+                "footer": "I am a footer",
+                "level": "intermediate1"
+            },
+            {
+                "title": "intermediate 2",
+                "summary": "I am an intermediate 2",
+                "footer": "I am a footer",
+                "level": "intermediate2"
+            },
+            {
+                "title": "intermediate 3",
+                "summary": "I am an intermediate 3",
+                "footer": "I am a footer",
+                "level": "intermediate3"
+            }
+        ]
+    },
+    "advanced": {
+        "title": "What kind of advanced are you ?",
+        "cards": [
+            {
+                "title": "advanced 1",
+                "summary": "I am a advanced 1",
+                "footer": "I am a footer",
+                "level": "advanced1"
+            },
+            {
+                "title": "advanced 2",
+                "summary": "I am an advanced 2",
+                "footer": "I am a footer",
+                "level": "advanced2"
+            },
+            {
+                "title": "advanced 3",
+                "summary": "I am an advanced 3",
+                "footer": "I am a footer",
+                "level": "advanced3"
+            }
+        ]
+    },
+    "beginner1": {
+        "title": "What kind of beginner 1 are you ?",
+        "cards": [
+            {
+                "title": "Beginner 1.1",
+                "summary": "I am a Beginner 1.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 1.2",
+                "summary": "I am an Beginner 1.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 1.3",
+                "summary": "I am an Beginner 1.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "beginner2": {
+        "title": "What kind of beginner 2 are you ?",
+        "cards": [
+            {
+                "title": "Beginner 2.1",
+                "summary": "I am a Beginner 2.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 2.2",
+                "summary": "I am an Beginner 2.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 2.3",
+                "summary": "I am an Beginner 2.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "beginner3": {
+        "title": "What kind of beginner 3 are you ?",
+        "cards": [
+            {
+                "title": "Beginner 3.1",
+                "summary": "I am a Beginner 3.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 3.2",
+                "summary": "I am an Beginner 3.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "Beginner 3.3",
+                "summary": "I am an Beginner 3.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "intermediate1": {
+        "title": "What kind of intermediate 1 are you ?",
+        "cards": [
+            {
+                "title": "intermediate 1.1",
+                "summary": "I am a intermediate 1.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 1.2",
+                "summary": "I am an intermediate 1.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 1.3",
+                "summary": "I am an intermediate 1.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "intermediate2": {
+        "title": "What kind of intermediate 2 are you ?",
+        "cards": [
+            {
+                "title": "intermediate 2.1",
+                "summary": "I am a intermediate 2.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 2.2",
+                "summary": "I am an intermediate 2.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 2.3",
+                "summary": "I am an intermediate 2.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "intermediate3": {
+        "title": "What kind of intermediate 3 are you ?",
+        "cards": [
+            {
+                "title": "intermediate 3.1",
+                "summary": "I am a intermediate 3.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 3.2",
+                "summary": "I am an intermediate 3.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "intermediate 3.3",
+                "summary": "I am an intermediate 3.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "advanced1": {
+        "title": "What kind of advanced 1 are you ?",
+        "cards": [
+            {
+                "title": "advanced 1.1",
+                "summary": "I am a advanced 1.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 1.2",
+                "summary": "I am an advanced 1.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 1.3",
+                "summary": "I am an advanced 1.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "advanced2": {
+        "title": "What kind of advanced 2 are you ?",
+        "cards": [
+            {
+                "title": "advanced 2.1",
+                "summary": "I am a advanced 2.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 2.2",
+                "summary": "I am an advanced 2.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 2.3",
+                "summary": "I am an advanced 2.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    },
+    "advanced3": {
+        "title": "What kind of advanced 3 are you ?",
+        "cards": [
+            {
+                "title": "advanced 3.1",
+                "summary": "I am a advanced 3.1",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 3.2",
+                "summary": "I am an advanced 3.2",
+                "footer": "I am a footer",
+                "level": ""
+            },
+            {
+                "title": "advanced 3.3",
+                "summary": "I am an advanced 3.3",
+                "footer": "I am a footer",
+                "level": ""
+            }
+        ]
+    }
+}
