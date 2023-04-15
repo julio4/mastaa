@@ -29,14 +29,14 @@ const Immutability = () => {
 
   return (
     <SettingsWrapper
-      title="Immutability"
-      explanation="Make the contract immutable "
+      title="Modularity"
+      explanation="Make the contract modular "
       moveToPreviousPage={() => router.push('/app/settings')}
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} marginTop={'4vh'} alignItems={'center'} justifyContent={'center'}>
         <FormLabel>
           <Highlight query="Click to make it Immutable :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5 }}>
-            Click to make it Immutable :
+            Click to make it Modular :
           </Highlight>
         </FormLabel>
         <Switch bottom={0.5} size={'lg'} colorScheme="pink" onChange={setImmutabilityChecked} />
