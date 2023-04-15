@@ -3,7 +3,7 @@ import Footer from './footer'
 import { ReactNode } from 'react'
 
 import { Flex, useColorModeValue, Box } from '@chakra-ui/react'
-import ProgressionBar from '@/pages/app/progressionBar'
+import ProgressionBar from '@/components/Layout/progressionBar'
 import { Step } from '@/types/enums'
 
 import styles from '@/styles/components/Layout/layout.module.css'
