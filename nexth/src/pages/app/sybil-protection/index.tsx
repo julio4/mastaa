@@ -10,12 +10,13 @@ import { setStep } from '@/store/reducers/stepSlice'
 import worldcoin from '@public/worldcoin.svg'
 import sismo from '@public/sismo.jpg'
 import gitcoin from '@public/gitcoin.svg'
+import { Step } from '@/types/enums'
 
 const Sybil = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setStep(1))
+    dispatch(setStep(Step.Step2))
   }, [])
 
   return (

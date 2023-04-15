@@ -11,12 +11,13 @@ import Layout from '@/components/Layout/layout'
 
 import { useDispatch } from 'react-redux'
 import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
 
 const Start = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setStep(0))
+    dispatch(setStep(Step.Step1))
   }, [])
 
   return (

@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout/layout_light'
+import Layout from '@/components/Layout/layout'
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { useColorModeValue, Box, Heading, Text, Card, CardBody } from '@chakra-ui/react'
 import { ReactNode } from 'react'
@@ -15,7 +15,7 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
   return (
     <Layout>
       <Card
-        width={'100%'}
+        width={'80vw'}
         margin={'70px'}
         boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.3)'}
         borderRadius={'2xl'}

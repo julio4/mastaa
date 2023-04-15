@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Box, useColorModeValue, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Text } from '@chakra-ui/react'
@@ -8,6 +8,8 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { useDispatch } from 'react-redux'
 import { setTxPerUser } from '@/store/reducers/paymasterSlice'
 import SettingsWrapper from './wrapper'
+import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
 
 const TransactionsPerUser = () => {
   const router = useRouter()
@@ -33,6 +35,11 @@ const TransactionsPerUser = () => {
   }
 
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setStep(Step.Step3))
+  }, [])
+
   const moveToNextPage = () => {
     dispatch(setTxPerUser(sliderValue))
     router.push('/app/settings/immutability')
