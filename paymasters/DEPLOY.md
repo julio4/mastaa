@@ -1,5 +1,4 @@
-
-// Deploy a Diamond
+# Deploy a mastaa diamond
 
 ## _diamondCut
 
@@ -56,7 +55,6 @@ write:
 [
     ["0xe185eb297f436084b21670e1fe477fccf0a5c021", 0, ["0x1f931c1c"]],
     ["0x310BAaBc806a4044978e06Bb0cf0CF4f0C72a54c", 0, ["0xf2fde38b"]],
-
     ["0xb54Ef1a543429332618E42B7fB84A35CBe984Ba7", 0, ["0x0396cb60","0xd0e30db0","0xa9a23409","0x715018a6","0xf2fde38b","0xbb9fe6bf","0xf465c77e","0xc23a5cea","0x205c2878"]]
 ]
 ```
