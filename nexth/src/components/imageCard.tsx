@@ -4,20 +4,31 @@ import Image, { StaticImageData } from 'next/image'
 import { useState, useEffect } from 'react'
 import { Color } from '@/types/theme'
 import { useRouter } from 'next/router'
+import { setChosen } from '@/store/reducers/sybilSlice'
+import { useDispatch } from 'react-redux'
 
 interface CustomCardProps {
   lightModeImage: string | StaticImageData
   blackModeImage: string | StaticImageData
   disabled: boolean
+  sybilOption: 'worldcoin' | 'sismo' | 'gitcoin'
 }
 
 const ImageCard = (props: CustomCardProps) => {
   const [showCard, setShowCard] = useState(false)
   const router = useRouter()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     setShowCard(true)
   }, [])
+
+  const moveToNextPage = () => {
+    if (!props.disabled) {
+      dispatch(setChosen(props.sybilOption))
+      router.push('/app/settings')
+    }
+  }
 
   return (
     <Card
@@ -34,9 +45,7 @@ const ImageCard = (props: CustomCardProps) => {
       maxW={'20vh'}
       backgroundColor={Color.LightGray}
       overflow={'hidden'}
-      onClick={() => {
-        if (!props.disabled) router.push('/app/settings')
-      }}
+      onClick={moveToNextPage}
       position={'relative'}
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>
       {props.disabled && (

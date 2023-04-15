@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
+import { Box, Heading, SimpleGrid } from '@chakra-ui/react'
 
 import Layout from '@/components/Layout/layout'
 import ImageCard from '@/components/imageCard'
@@ -21,17 +21,16 @@ const Sybil = () => {
 
   return (
     <Layout>
-      
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'7vh'} padding={'10vh 0 0 0'} flexWrap={'wrap'}>
-          <Heading as="h4" size="lg">
-            Choose a sybil protection
-          </Heading>
-          <SimpleGrid spacing={20} columns={3} paddingX={20}>
-            <ImageCard lightModeImage={worldcoin} blackModeImage={worldcoin} disabled={false} />
-            <ImageCard lightModeImage={sismo} blackModeImage={sismo} disabled={false} />
-            <ImageCard lightModeImage={gitcoin} blackModeImage={gitcoin} disabled={true} />
-          </SimpleGrid>
-        </Box>
+      <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'7vh'} padding={'10vh 0 0 0'} flexWrap={'wrap'}>
+        <Heading as="h4" size="lg">
+          Choose a sybil protection
+        </Heading>
+        <SimpleGrid spacing={20} columns={3} paddingX={20}>
+          <ImageCard lightModeImage={worldcoin} blackModeImage={worldcoin} sybilOption="worldcoin" disabled={false} />
+          <ImageCard lightModeImage={sismo} blackModeImage={sismo} sybilOption="sismo" disabled={false} />
+          <ImageCard lightModeImage={gitcoin} blackModeImage={gitcoin} sybilOption="gitcoin" disabled={true} />
+        </SimpleGrid>
+      </Box>
     </Layout>
   )
 }
