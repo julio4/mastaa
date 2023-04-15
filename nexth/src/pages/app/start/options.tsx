@@ -10,8 +10,8 @@ const Options = () => {
   return (
     <Box className={styles.wrapper}>
       <SimpleGrid className={styles.grid} spacing={20} columns={2} paddingX={20}>
-        <TextCard title={'Sponsor'} summary={'Pay gas for your users'} onClick={() => router.push('/app/sybil-protection')} />
-        <TextCard title={'Swap'} summary={'User can pay gas with another token than ETH'} onClick={() => {}} />
+        <TextCard title={'Sponsor'} summary={'Pay gas for your users'} disabled={false} onClick={() => router.push('/app/sybil-protection')} />
+        <TextCard title={'Swap'} summary={'User can pay gas with another token than ETH'} disabled={true} onClick={() => {}} />
       </SimpleGrid>
     </Box>
   )
