@@ -4,7 +4,8 @@
     "target": "es6",
     // "baseUrl": "./src"
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"]
     }
   },
   "ts-node": {

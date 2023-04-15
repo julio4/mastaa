@@ -1,10 +1,11 @@
+import { AtSignIcon } from '@chakra-ui/icons'
 import { Input, InputGroup, InputLeftAddon } from '@chakra-ui/react'
 
 const ContractAddress = () => {
   return (
     <InputGroup maxWidth="40vw">
-      <InputLeftAddon> 0x </InputLeftAddon>
-      <Input placeholder="Contract address" />
+      <InputLeftAddon borderRadius={'2xl'}> {<AtSignIcon />} </InputLeftAddon>
+      <Input placeholder="Contract address" borderRadius={'2xl'} />
     </InputGroup>
   )
 }
