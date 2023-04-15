@@ -3,20 +3,10 @@ import { Heading } from '@chakra-ui/react'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 
 import styles from '@/styles/start/options.module.css'
-import CustomCard from '../../../components/customCard'
+import CustomCard from '@/components/customCard'
 
 const Options = () => {
   const router = useRouter()
-  // const [currentLevel, setCurrentLevel] = useState(OnboardingLevel.Level);
-
-  // const updateCurrentLevel = (level: string) => {
-  //     if (level) {
-  //         if (level.match(/\d+/g)) props.setActiveStep(Step.Step3);
-  //         else props.setActiveStep(Step.Step2);
-
-  //         setCurrentLevel(level as OnboardingLevel);
-  //     }
-  // };
 
   return (
     <Box className={styles.wrapper}>
