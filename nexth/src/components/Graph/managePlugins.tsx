@@ -1,7 +1,10 @@
 import { Button, useColorMode, useColorModeValue, Box, Heading } from '@chakra-ui/react'
-import { use } from 'react'
+import ImageCard from '@/components/imageCard'
 
 import { FaEthereum } from 'react-icons/fa'
+import worldcoin from '@public/worldcoin.svg'
+import sismo from '@public/sismo.jpg'
+import gitcoin from '@public/gitcoin.svg'
 
 export default function Overview() {
   return (
@@ -21,13 +24,10 @@ export default function Overview() {
       <Box position="relative" display="flex" justifyContent={'space-between'} height={'15%'}>
         <Box display="flex" flexDirection="column">
           <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'whiteAlpha.600')}>
-            My Balance
+            Verification System
           </Heading>
           <Box display={'flex'} flexDirection={'row'} color={useColorModeValue('gray.700', 'gray.100')}>
-            <Heading as="h2" mb={4} fontSize={'0.8em'} mr={2}>
-              ETH
-            </Heading>
-            <Heading fontSize={'1.5em'}>3.45</Heading>
+            <ImageCard title={'Worldcoin'} lightModeImage={worldcoin} blackModeImage={worldcoin} summary={'blabla'} onClick={() => {}} />
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">

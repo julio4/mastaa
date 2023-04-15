@@ -28,7 +28,7 @@ export default function Dashboard() {
         display="flex"
         flexDirection="column"
         alignItems="center"
-        padding="10"
+        padding="14"
         borderRadius={"2xl"}
         bg={useColorModeValue("white", "blackAlpha.600")}
         boxShadow="lg"
@@ -37,11 +37,10 @@ export default function Dashboard() {
         <Overview />
 
         <SimpleGrid columns={2} spacing={8}>
-            <UserHelped />
-            <BalanceChart />
-
+          <UserHelped />
+          <BalanceChart />
         </SimpleGrid>
       </Box>
     </Box>
-  )
+  );
 }
