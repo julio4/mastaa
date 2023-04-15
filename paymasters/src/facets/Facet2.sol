@@ -6,7 +6,11 @@ import "../../lib/LibMastaa.sol";
 contract Test1Facet {
     bytes32 constant FACET_STORAGE_POSITION = keccak256("facets.storage");
 
-    function getStorage() internal pure returns (LibMastaa.Storage storage ms) {
+    function getStorage()
+        internal
+        pure
+        returns (LibMastaa.SponsorStorage storage ms)
+    {
         bytes32 position = FACET_STORAGE_POSITION;
         assembly {
             ms.slot := position
@@ -14,11 +18,11 @@ contract Test1Facet {
     }
 
     function increment() public {
-        LibMastaa.Storage storage store = getStorage();
-        store.value = store.value + 1;
+        LibMastaa.SponsorStorage storage store = getStorage();
+        store.maxTxPerUser = store.maxTxPerUser + 1;
     }
 
-    function getValueFacet2() public view returns (uint256) {
-        return getStorage().value;
+    function getmaxTxPerUser() public view returns (uint256) {
+        return getStorage().maxTxPerUser;
     }
 }
