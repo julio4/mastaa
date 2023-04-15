@@ -10,6 +10,7 @@ import { setTxPerUser } from '@/store/reducers/paymasterSlice'
 import SettingsWrapper from './wrapper'
 import { setStep } from '@/store/reducers/stepSlice'
 import { Step } from '@/types/enums'
+import { Color } from '@/types/theme'
 
 const TransactionsPerUser = () => {
   const router = useRouter()
@@ -53,7 +54,12 @@ const TransactionsPerUser = () => {
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} width={'100%'} height={'10%'} marginTop={10}>
         <Box mx={6}>
-          <MinusIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue - 1)} _hover={{ cursor: 'pointer' }} />
+          <MinusIcon
+            color="pink"
+            boxSize={7}
+            onClick={() => setSliderValue(sliderValue - 1)}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
+          />
         </Box>
         <Slider aria-label="slider-ex-2" colorScheme="pink" defaultValue={30} value={sliderValue} width={'50%'} onChange={handleSliderChange}>
           <SliderTrack>
@@ -62,7 +68,12 @@ const TransactionsPerUser = () => {
           <SliderThumb />
         </Slider>
         <Box mx={6}>
-          <AddIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue + 1)} _hover={{ cursor: 'pointer' }} />
+          <AddIcon
+            color="pink"
+            boxSize={7}
+            onClick={() => setSliderValue(sliderValue + 1)}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
+          />
         </Box>
       </Box>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} width={'100%'} height={'10%'} marginTop={10}>
