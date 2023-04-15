@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.12;
 
-import "../lib/LibMastaa.sol";
+import "../../lib/LibMastaa.sol";
 
 contract Test1Facet {
     bytes32 constant FACET_STORAGE_POSITION = keccak256("facets.storage");
@@ -13,12 +13,7 @@ contract Test1Facet {
         }
     }
 
-    function increment() public {
-        LibMastaa.Storage store = getStorage();
-        store.value = store.value + 1;
-    }
-
-    function getValueFacet2() public view returns (uint256) {
+    function getValueFacet1() public view returns (uint256) {
         return getStorage().value;
     }
 }
