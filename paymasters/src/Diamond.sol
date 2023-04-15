@@ -9,11 +9,11 @@ pragma experimental ABIEncoderV2;
 * Implementation of a diamond.
 /******************************************************************************/
 
-import "./libraries/LibDiamond.sol";
-import "./interfaces/IDiamondLoupe.sol";
-import "./interfaces/IDiamondCut.sol";
-import "./interfaces/IERC173.sol";
-import "./interfaces/IERC165.sol";
+import "../lib/LibDiamond.sol";
+import "../interfaces/IDiamondLoupe.sol";
+import "../interfaces/IDiamondCut.sol";
+import "../interfaces/IERC173.sol";
+import "../interfaces/IERC165.sol";
 
 contract Diamond {
     // more arguments are added to this struct
