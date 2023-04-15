@@ -1,5 +1,17 @@
 import React from 'react'
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ChartData, ChartArea } from 'chart.js'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartData,
+  ChartArea,
+  Filler,
+} from 'chart.js'
 import { useRef, useEffect, useState } from 'react'
 
 import { Chart } from 'react-chartjs-2'
@@ -7,9 +19,7 @@ import { Chart } from 'react-chartjs-2'
 import { Box } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/react'
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend)
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler)
 
 const today = new Date()
 const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate()
@@ -28,7 +38,15 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Balance (ETH)',
+      text: 'Balance ETH',
+      padding: {
+        top: 10,
+        bottom: 10,
+      },
+      font: {
+        size: 24,
+        family: 'Helvetica Neue',
+      },
     },
   },
 
@@ -46,27 +64,20 @@ const options = {
   },
 }
 
-let currentValue = 4
-const dataValues = labels.map((_, i) => {
-  if (i >= 10 && i <= 20 && Math.random() < 0.45) {
-    currentValue = Math.random() * (5 - 3) + 3
-  } else {
-    currentValue = Math.max(0, currentValue - Math.random())
-  }
-  return currentValue
-})
-
+const dataValues = [5.2, 5.1, 4.75, 4.01, 3.95, 3.74, 3.6, 2.97, 4.3, 4.2, 3.74, 3.64, 3.51, 3.14, 2.84, 2.72]
 export const data = {
   labels,
   datasets: [
     {
-      fill: true,
       //   label: 'Users helped',
       data: dataValues,
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
 
       pointBackgroundColor: 'red',
+
+      fill: true,
+      tension: 0.2,
     },
   ],
 }

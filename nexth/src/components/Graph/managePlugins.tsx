@@ -12,37 +12,11 @@ export default function Overview() {
       padding={10}
       backgroundColor={useColorModeValue('rgba(248, 225, 189, 0.14)', 'rgba(192, 73, 26, 0.25)')}
       boxShadow="lg"
-      mb={'2%'}>
+      mb={'10%'}>
       <Box position="relative" display="flex" justifyContent={'space-between'} height={'15%'} mb={14}>
         <Heading as="h1" size="xl" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
-          Account Overview
+          Manage your plugins
         </Heading>
-        <Box>
-          <Button
-            // bg={useColorModeValue("red.100", "BlackAlpha.900")}
-            colorScheme={useColorModeValue('red', 'orange')}
-            _hover={{
-              bg: useColorModeValue('whiteAlpha.600', 'orange.300'),
-              color: useColorModeValue('red', 'gray.900'),
-            }}
-            variant={'outline'}
-            borderWidth={'2px'}
-            borderRadius={'xl'}
-            mr={4}>
-            Withdraw
-          </Button>
-          <Button
-            bg={useColorModeValue('red', 'orange.200')}
-            _hover={{
-              bg: useColorModeValue('red.600', 'orange.300'),
-              color: useColorModeValue('white', 'gray.900'),
-            }}
-            color={useColorModeValue('white', 'gray.900')}
-            borderWidth={'2px'}
-            borderRadius={'xl'}>
-            Deposit
-          </Button>
-        </Box>
       </Box>
       <Box position="relative" display="flex" justifyContent={'space-between'} height={'15%'}>
         <Box display="flex" flexDirection="column">
