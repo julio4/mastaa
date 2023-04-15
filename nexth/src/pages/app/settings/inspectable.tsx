@@ -4,8 +4,10 @@ import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 import { setInspectable } from '@/store/reducers/paymasterSlice'
 import SettingsWrapper from './wrapper'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Highlight } from '@chakra-ui/react'
+import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
 
 const Inspectable = () => {
   const router = useRouter()
@@ -20,6 +22,10 @@ const Inspectable = () => {
     dispatch(setInspectable(inspectableSwitch))
     router.push('/app/settings/ownerAddress')
   }
+
+  useEffect(() => {
+    dispatch(setStep(Step.Step5))
+  }, [])
 
   return (
     <SettingsWrapper

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Box, useColorModeValue, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Text } from '@chakra-ui/react'
@@ -8,6 +8,9 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { useDispatch } from 'react-redux'
 import { setTxPerUser } from '@/store/reducers/paymasterSlice'
 import SettingsWrapper from './wrapper'
+import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
+import { Color } from '@/types/theme'
 
 const TransactionsPerUser = () => {
   const router = useRouter()
@@ -33,6 +36,11 @@ const TransactionsPerUser = () => {
   }
 
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setStep(Step.Step3))
+  }, [])
+
   const moveToNextPage = () => {
     dispatch(setTxPerUser(sliderValue))
     router.push('/app/settings/immutability')
@@ -46,7 +54,12 @@ const TransactionsPerUser = () => {
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} width={'100%'} height={'10%'} marginTop={10}>
         <Box mx={6}>
-          <MinusIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue - 1)} _hover={{ cursor: 'pointer' }} />
+          <MinusIcon
+            color="pink"
+            boxSize={7}
+            onClick={() => setSliderValue(sliderValue - 1)}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
+          />
         </Box>
         <Slider aria-label="slider-ex-2" colorScheme="pink" defaultValue={30} value={sliderValue} width={'50%'} onChange={handleSliderChange}>
           <SliderTrack>
@@ -55,7 +68,12 @@ const TransactionsPerUser = () => {
           <SliderThumb />
         </Slider>
         <Box mx={6}>
-          <AddIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue + 1)} _hover={{ cursor: 'pointer' }} />
+          <AddIcon
+            color="pink"
+            boxSize={7}
+            onClick={() => setSliderValue(sliderValue + 1)}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
+          />
         </Box>
       </Box>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} width={'100%'} height={'10%'} marginTop={10}>

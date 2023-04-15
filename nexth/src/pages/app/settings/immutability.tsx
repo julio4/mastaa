@@ -4,8 +4,10 @@ import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 import { setImmutability } from '@/store/reducers/paymasterSlice'
 import SettingsWrapper from './wrapper'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Box } from '@chakra-ui/react'
+import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
 
 const Immutability = () => {
   const router = useRouter()
@@ -20,6 +22,10 @@ const Immutability = () => {
     dispatch(setImmutability(immutabilitySwitch))
     router.push('/app/settings/inspectable')
   }
+
+  useEffect(() => {
+    dispatch(setStep(Step.Step4))
+  }, [])
 
   return (
     <SettingsWrapper

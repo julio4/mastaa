@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import contractArtifact from '../../../constants/abi/MastaaDiamond.json'
 import contractsBinaries from '../../../constants/contractsBinaries.json'
 import { Button, Box, useColorModeValue, Heading, Text } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store/rootState'
+import { setStep } from '@/store/reducers/stepSlice'
+import { Step } from '@/types/enums'
 import { WarningIcon, CheckCircleIcon, StarIcon } from '@chakra-ui/icons'
 
 import { Divider } from '@chakra-ui/react'
@@ -12,6 +14,11 @@ import { Divider } from '@chakra-ui/react'
 export default function DeployCard() {
   const customVariables = useSelector((state: RootState) => state.paymaster)
   const contractByteCode = contractsBinaries.MastaaDiamond
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(setStep(Step.Step7))
+  }, [])
 
   const [signer, setSigner] = useState(null)
   const factory = signer ? new ethers.ContractFactory(contractArtifact.abi, contractByteCode, signer) : null
@@ -55,7 +62,7 @@ export default function DeployCard() {
   }
 
   return (
-    <Box height="100%" width={'100%'} display={'flex'} justifyContent={'center'}>
+    <Box height="100%" width={'80vw'} display={'flex'} justifyContent={'center'}>
       <Box
         position="relative"
         width={'80%'}

@@ -1,11 +1,10 @@
-import Layout from "@/components/Layout/layout_light";
-import Dashboard from "./dashboard";
-import { Button } from "@chakra-ui/react";
+import Layout from '@/components/Layout/layout_light'
+import Dashboard from './dashboard'
 
 export default function Home() {
   return (
     <Layout>
       <Dashboard />
     </Layout>
-  );
+  )
 }

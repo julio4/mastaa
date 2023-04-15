@@ -48,7 +48,7 @@ const TextCard = (props: TextCardProps) => {
               transform: 'rotate(-30deg)',
               zIndex: 1,
             }}>
-            <Text fontSize="2xl" fontWeight="extrabold" color="white">
+            <Text fontSize="2xl" fontWeight="extrabold" color="black">
               COMING SOON
             </Text>
           </div>

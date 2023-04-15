@@ -1,4 +1,5 @@
-import Layout from '@/components/Layout/layout_light'
+import Layout from '@/components/Layout/layout'
+import { Color } from '@/types/theme'
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { useColorModeValue, Box, Heading, Text, Card, CardBody } from '@chakra-ui/react'
 import { ReactNode } from 'react'
@@ -15,7 +16,7 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
   return (
     <Layout>
       <Card
-        width={'100%'}
+        width={'80vw'}
         margin={'70px'}
         boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.3)'}
         borderRadius={'2xl'}
@@ -34,7 +35,7 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
             left={'6vw'}
             top="50%"
             onClick={props.moveToPreviousPage}
-            _hover={{ cursor: 'pointer' }}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
           />
           <CardBody width={'100%'} paddingX={'10vw'} margin={'auto'} textAlign={'center'}>
             <Text width={'100%'}>{props.explanation}</Text>
@@ -47,7 +48,7 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
             right={'6vw'}
             top="50%"
             onClick={props.moveToNextPage}
-            _hover={{ cursor: 'pointer' }}
+            _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
           />
         </Box>
       </Card>
