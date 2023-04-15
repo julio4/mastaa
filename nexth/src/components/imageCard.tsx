@@ -2,6 +2,7 @@ import { Card, useColorModeValue } from '@chakra-ui/react'
 import styles from '@/styles/components/card.module.css'
 import Image, { StaticImageData } from 'next/image'
 import { useState, useEffect } from 'react'
+import { Color } from '@/types/theme'
 
 interface CustomCardProps {
   title: string
@@ -32,7 +33,7 @@ const ImageCard = (props: CustomCardProps) => {
       minWidth={'20vw'}
       maxH={'20vw'}
       maxW={'20vh'}
-      backgroundColor={'#EDF2F7'}
+      backgroundColor={Color.LightGray}
       overflow={'hidden'}
       onClick={() => props.onClick()}
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>

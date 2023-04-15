@@ -58,25 +58,13 @@ const Start = () => {
               onChange={handleInputChange}
               onBlur={handleInputBlur}
             />
-            <Text fontSize="xl" fontWeight="bold" color={useColorModeValue('black', 'white')} ml={2} mr={"10%"}>
+            <Text fontSize="xl" fontWeight="bold" color={useColorModeValue('black', 'white')} ml={2} mr={'10%'}>
               Tx per user sponsored
             </Text>
-            <Box mx={6}>
-              <MinusIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue - 1)} _hover={{ cursor: 'pointer' }} />
-            </Box>
-            <Slider aria-label="slider-ex-2" colorScheme="pink" defaultValue={30} value={sliderValue} width={'30%'} onChange={handleSliderChange}>
-              <SliderTrack>
-                <SliderFilledTrack />
-              </SliderTrack>
-              <SliderThumb />
-            </Slider>
-            <Box mx={6}>
-              <AddIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue + 1)} _hover={{ cursor: 'pointer' }} />
-            </Box>
           </Box>
           <Box display={'flex'} alignItems={'center'} justifyContent={'flex-start'} width={'100%'} height={'10%'} marginTop={10}>
-            <Heading as="h2" fontSize={"24px"} fontWeight="bold" color={useColorModeValue('black', 'white')} mr={'10%'}>
-              Immuability
+            <Heading as="h2" fontSize={'24px'} fontWeight="bold" color={useColorModeValue('black', 'white')} mr={'10%'}>
+              Immutability
             </Heading>
           </Box>
           <Box display={'flex'} alignItems={'center'} justifyContent={'flex-start'} width={'100%'} height={'10%'} marginTop={10}>

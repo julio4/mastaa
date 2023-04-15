@@ -1,6 +1,7 @@
 import { Card, CardHeader, Heading, CardBody, Text } from '@chakra-ui/react'
 import styles from '@/styles/components/card.module.css'
 import { useState, useEffect } from 'react'
+import { Color } from '@/types/theme'
 
 interface TextCardProps {
   title: string
@@ -24,7 +25,7 @@ const TextCard = (props: TextCardProps) => {
       borderRadius={'2xl'}
       boxShadow={'0px 20px 10px rgba(0, 0, 0, 0.3)'}
       transition={'transform 0.2s ease-in-out'}
-      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: '#EDF2F7' } : {}}
+      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: Color.LightGray } : {}}
       onClick={() => props.onClick()}
       style={props.disabled ? { backgroundColor: 'lightgray', position: 'relative' } : {}}
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>
