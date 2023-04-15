@@ -27,7 +27,6 @@ const ImageCard = (props: CustomCardProps) => {
       boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.2)'}
       borderRadius={'2xl'}
       transition={'transform 0.2s ease-in-out'}
-      border={'1px solid black'}
       cursor={!props.disabled ? 'pointer' : ''}
       _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: Color.LightGray } : {}}
       minWidth={'20vw'}

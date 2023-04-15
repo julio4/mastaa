@@ -19,7 +19,6 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
         margin={'70px'}
         boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.3)'}
         borderRadius={'2xl'}
-        border={'1px solid black'}
         backgroundColor={'white'}
         display={'flex'}
         alignItems={'center'}

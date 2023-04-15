@@ -21,7 +21,6 @@ const TextCard = (props: TextCardProps) => {
     <Card
       minWidth={'20vw'}
       cursor={!props.disabled ? 'pointer' : ''}
-      border={'1px solid black'}
       borderRadius={'2xl'}
       boxShadow={'0px 20px 10px rgba(0, 0, 0, 0.3)'}
       transition={'transform 0.2s ease-in-out'}
