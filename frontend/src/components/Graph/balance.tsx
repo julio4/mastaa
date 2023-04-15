@@ -8,10 +8,15 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartArea,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { useRef, useEffect, useState } from "react";
+
+import { Chart } from "react-chartjs-2";
 
 import { Box } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 ChartJS.register(
   CategoryScale,
@@ -22,12 +27,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-
-import { useRef, useEffect, useState } from "react";
-import type { ChartData, ChartArea } from "chart.js";
-
-import { Chart } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -92,13 +91,13 @@ const options = {
 
 let currentValue = 4;
 const dataValues = labels.map((_, i) => {
-  if (i >= 10 && i <= 20 && Math.random() < 0.5) {
+  if (i >= 10 && i <= 20 && Math.random() < 0.45) {
     currentValue = Math.random() * (5 - 3) + 3;
   } else {
     currentValue = Math.max(0, currentValue - Math.random());
   }
   return currentValue;
-}); 
+});
 
 export const data = {
   labels,
@@ -115,21 +114,16 @@ export const data = {
   ],
 };
 
-function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea) {
-  const colorStart = colors[Math.floor(Math.random() * colors.length)];
-  const colorMid = colors.filter((color) => color !== colorStart)[
-    Math.floor(Math.random() * colors.length)
-  ];
-  const colorEnd = colors.filter(
-    (color) => color !== colorStart && color !== colorMid
-  )[Math.floor(Math.random() * colors.length)];
+function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea, colorStart: string) {
 
+  // Choose the next color in the list, or the first one if we're at the end
+  const colorMid = colors[(colors.indexOf(colorStart) + 1) % colors.length];
+  const colorEnd = colors[(colors.indexOf(colorStart) + 2) % colors.length];
   const gradient = ctx.createLinearGradient(0, area.bottom, 0, area.top);
 
-  gradient.addColorStop(0, "red");
-  gradient.addColorStop(0.5, "orange"); //   
-  gradient.addColorStop(1, "yellow");
-
+  gradient.addColorStop(0, colorStart);
+  gradient.addColorStop(0.5, colorMid);
+  gradient.addColorStop(1, colorEnd);
   return gradient;
 }
 
@@ -150,7 +144,9 @@ export default function BalanceChart() {
       ...data,
       datasets: data.datasets.map((dataset) => ({
         ...dataset,
-        borderColor: createGradient(chart.ctx, chart.chartArea),
+        borderColor: createGradient(chart.ctx, chart.chartArea, dataset.borderColor as string),
+        backgroundColor: createGradient(chart.ctx, chart.chartArea, dataset.backgroundColor as string),
+        borderWidth: 2,
       })),
     };
 
@@ -168,4 +164,3 @@ export default function BalanceChart() {
     </Box>
   );
 }
-

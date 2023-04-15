@@ -10,6 +10,7 @@ import {
 
 import UserHelped from "@/components/Graph/userHelped";
 import BalanceChart from "@/components/Graph/balance";
+import Overview from "@/components/Graph/overview";
 
 import { useState } from "react";
 
@@ -33,16 +34,7 @@ export default function Dashboard() {
         boxShadow="lg"
         margin={10}
       >
-        <Heading
-          as="h1"
-          size="2xl"
-          fontWeight="bold"
-          color={useColorModeValue("gray.800", "white")}
-          textAlign="center"
-          mb="10"
-        >
-          Dashboard
-        </Heading>
+        <Overview />
 
         <SimpleGrid columns={2} spacing={8}>
             <UserHelped />

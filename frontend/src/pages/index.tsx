@@ -72,13 +72,13 @@ export default function LandingPage() {
               onClick={() => router.push("/app/start")}
               transition="all 0.3s"
               bgGradient={useColorModeValue(
-                "linear(to-r, yellow.200, orange.300)",
-                "linear(to-r, yellow.600, orange.700)"
+                "linear(to-r, yellow.200, orange.200)",
+                "linear(to-r, yellow.600, orange.600)"
               )}
               _hover={{
                 bgGradient: useColorModeValue(
-                  "linear(to-r, yellow.200, orange.300)",
-                  "linear(to-r, yellow.500, orange.600)"
+                  "linear(to-r, yellow.200, orange.200)",
+                  "linear(to-r, yellow.500, orange.500)"
                 ),
                 boxShadow: "xl",
                 transform: "scale(1.05)",

@@ -83,6 +83,7 @@ const options = {
       },
     },
     y: {
+      min: 0,
       grid: {
         display: false,
       },
@@ -96,7 +97,7 @@ export const data = {
     {
       fill: true,
       //   label: 'Users helped',
-      data: labels.map(() => Math.random() * 100),
+      data: labels.map(() => (Math.random() + 0.11) * 100),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
 
