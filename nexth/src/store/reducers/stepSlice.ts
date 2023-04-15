@@ -15,3 +15,7 @@ const stepSlice = createSlice({
 export const { setStep } = stepSlice.actions
 
 export default stepSlice
+
+export type Step = {
+  value: number
+}

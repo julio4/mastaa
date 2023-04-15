@@ -2,11 +2,12 @@ import { Box, chakra, Flex, Stack, Text, useColorModeValue, VisuallyHidden } fro
 import { FaGithub, FaEthereum } from 'react-icons/fa'
 
 import { ReactNode } from 'react'
+import { Color } from '@/types/theme'
 
 const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
   return (
     <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiorangepha.100')}
+      bg={useColorModeValue(Color.LightGray, 'whiorangepha.100')}
       rounded={'full'}
       w={8}
       h={8}
@@ -19,7 +20,7 @@ const SocialButton = ({ children, label, href }: { children: ReactNode; label: s
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiorangepha.200'),
+        bg: useColorModeValue(Color.DarkerGray, 'whiorangepha.200'),
       }}>
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}

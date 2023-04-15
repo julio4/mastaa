@@ -3,6 +3,7 @@ pragma solidity ^0.8.12;
 
 /* solhint-disable reason-string */
 
+import "../../lib/LibDiamond.sol";
 import "../../interfaces/IPaymaster.sol";
 import "../../interfaces/IEntryPoint.sol";
 import "./Helpers.sol";
@@ -25,7 +26,7 @@ abstract contract BasePaymaster is IPaymaster {
     }
 
     function _checkOwner() internal view virtual {
-        require(LibDiamond.contractOwner() == _msgSender(), "Ownable: caller is not the owner");
+        require(LibDiamond.contractOwner() == msg.sender, "Ownable: caller is not the owner");
     }
 
     /// @inheritdoc IPaymaster

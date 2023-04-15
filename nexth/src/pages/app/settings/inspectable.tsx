@@ -4,20 +4,20 @@ import Layout from '@/components/Layout/layout_light'
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-import { setImmutability } from '@/store/reducers/paymasterSlice'
+import { setInspectable } from '@/store/reducers/paymasterSlice'
 
-const Immutability = () => {
+const Inspectable = () => {
   const router = useRouter()
-  let immutabilityChecked = false
+  let inspectableChecked = false
   const dispatch = useDispatch()
 
-  const setImmutabilityChecked = (event) => {
-    immutabilityChecked = event.target.checked
+  const setInspectableChecked = (event) => {
+    inspectableChecked = event.target.checked
   }
 
   const moveToNextPage = () => {
-    dispatch(setImmutability(immutabilityChecked))
-    router.push('/app/settings/inspectable')
+    dispatch(setInspectable(inspectableChecked))
+    router.push('/app/settings/ownerAddress')
   }
 
   return (
@@ -35,7 +35,7 @@ const Immutability = () => {
           boxShadow="lg"
           margin={10}
           height={'80%'}>
-          <ArrowLeftIcon color="pink" boxSize={7} onClick={() => router.push('/app/settings')} _hover={{ cursor: 'pointer' }} />
+          <ArrowLeftIcon color="pink" boxSize={7} onClick={() => router.push('/app/settings/immutability')} _hover={{ cursor: 'pointer' }} />
           <Box
             position="relative"
             width={'100%'}
@@ -45,11 +45,11 @@ const Immutability = () => {
             padding="10"
             bg={useColorModeValue('white', 'blackAlpha.600')}
             margin={10}
-            height={'100%'}>
+            height={'80%'}>
             <Heading as="h2" size="2xl" fontWeight="bold" color={useColorModeValue('black', 'white')} textAlign="center" mb={'5%'} mt={'-5%'}>
-              Immutability
+              Inspectable
             </Heading>
-            <Switch marginTop={'8vh'} size={'lg'} colorScheme="pink" onChange={setImmutabilityChecked} />
+            <Switch marginTop={'8vh'} size={'lg'} colorScheme="pink" onChange={setInspectableChecked} />
           </Box>
           <ArrowRightIcon color="pink" boxSize={7} onClick={moveToNextPage} _hover={{ cursor: 'pointer' }} />
         </Box>
@@ -58,4 +58,4 @@ const Immutability = () => {
   )
 }
 
-export default Immutability
+export default Inspectable
