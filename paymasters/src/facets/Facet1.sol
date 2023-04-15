@@ -17,7 +17,7 @@ contract Test1Facet {
         }
     }
 
-    function getValueFacet1() public view returns (uint256) {
-        return getStorage().value;
+    function getMaxTxPerUser() public view returns (uint256) {
+        return getStorage().maxTxPerUser;
     }
 }

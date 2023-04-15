@@ -19,10 +19,10 @@ contract Test1Facet {
 
     function increment() public {
         LibMastaa.SponsorStorage storage store = getStorage();
-        store.value = store.value + 1;
+        store.maxTxPerUser = store.maxTxPerUser + 1;
     }
 
-    function getValueFacet2() public view returns (uint256) {
-        return getStorage().value;
+    function getmaxTxPerUser() public view returns (uint256) {
+        return getStorage().maxTxPerUser;
     }
 }

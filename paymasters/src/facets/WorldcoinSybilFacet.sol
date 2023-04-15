@@ -45,7 +45,7 @@ contract WorldcoinSybilFacet is BasePaymaster {
     function verifyWorldcoinProof(
         uint256 root,
         uint256 nullifierHash,
-        uint256[8] calldata proof
+        uint256[8] memory proof
     ) public returns (bool isVerified) {
         LibMastaa.WorldCoinStorage storage ms = LibMastaa.getWorldCoinStorage();
 
@@ -53,7 +53,7 @@ contract WorldcoinSybilFacet is BasePaymaster {
         if (ms.nullifierHashes[nullifierHash]) return false;
 
         // We now verify the provided proof is valid and the user is verified by World ID
-        worldId.verifyProof(
+        ms.worldId.verifyProof(
             root,
             groupId,
             abi.encodePacked(address(this)).hashToField(), // we use this contract address as the unique signal
@@ -81,14 +81,9 @@ contract WorldcoinSybilFacet is BasePaymaster {
         (
             uint256 root,
             uint256 nullifierHash,
-            uint256[8] calldata proof
+            uint256[8] memory proof
         ) = parsePaymasterAndData(userOp.paymasterAndData);
 
-        // Worldcoin signature is uint256[8] ?
-        require(
-            proof.length == 64,
-            "VerifyingPaymaster: invalid proof in paymasterAndData"
-        );
         ms.senderNonce[userOp.getSender()]++;
 
         // Verify worldcoin proof
@@ -110,10 +105,32 @@ contract WorldcoinSybilFacet is BasePaymaster {
     )
         public
         pure
-        returns (uint256 root, uint256 nullifierHash, uint256[8] calldata proof)
+        returns (uint256 root, uint256 nullifierHash, uint256[8] memory proof)
     {
-        root = paymasterAndData[ROOT_OFFSET:NULLIFIER_OFFSET];
-        nullifierHash = paymasterAndData[NULLIFIER_OFFSET:PROOF_OFFSET];
-        proof = paymasterAndData[PROOF_OFFSET:];
+        root = uint256(bytes32(paymasterAndData[ROOT_OFFSET:NULLIFIER_OFFSET]));
+        nullifierHash = uint256(
+            bytes32(paymasterAndData[NULLIFIER_OFFSET:PROOF_OFFSET])
+        );
+        //proof = bytesToUintArray(paymasterAndData, PROOF_OFFSET);
     }
+
+    // function bytesToUintArray(
+    //     bytes calldata _bytes,
+    //     uint256 _start
+    // ) private pure returns (uint256[8] memory result) {
+    //     require(_bytes.length >= _start + 32 * 8, "Invalid byte length");
+    //     assembly {
+    //         let offset := add(add(_bytes, 0x20), _start)
+    //         for {
+    //             let i := 0
+    //         } lt(i, 8) {
+    //             i := add(i, 1)
+    //         } {
+    //             mstore(
+    //                 add(result, mul(i, 0x20)),
+    //                 mload(add(offset, mul(i, 0x20)))
+    //             )
+    //         }
+    //     }
+    // }
 }
