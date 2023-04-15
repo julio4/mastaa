@@ -21,7 +21,7 @@ export default function LandingPage() {
         <Flex justifyContent="center" alignItems="center">
           <Flex direction="column" p={12} rounded={6} alignItems="center" padding={6}>
             <Heading as="h1" size="4xl" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
-              Syfu
+              Mastaa マスター
             </Heading>
             <Heading as="h2" textAlign="center" maxW="75%" size="md" mb={6} color={useColorModeValue('gray.700', 'gray.200')}>
               The smart wallet that adapts to your needs. Customize your experience with our easy-to-use plugins.

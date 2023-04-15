@@ -3,17 +3,16 @@ import styles from '@/styles/components/card.module.css'
 import Image, { StaticImageData } from 'next/image'
 import { useState, useEffect } from 'react'
 import { Color } from '@/types/theme'
+import { useRouter } from 'next/router'
 
 interface CustomCardProps {
-  title: string
-  summary: string
   lightModeImage: string | StaticImageData
   blackModeImage: string | StaticImageData
-  onClick: () => any
 }
 
 const ImageCard = (props: CustomCardProps) => {
   const [showCard, setShowCard] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setShowCard(true)
@@ -35,7 +34,7 @@ const ImageCard = (props: CustomCardProps) => {
       maxW={'20vh'}
       backgroundColor={Color.LightGray}
       overflow={'hidden'}
-      onClick={() => props.onClick()}
+      onClick={() => router.push('/app/settings')}
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>
       <Image
         src={useColorModeValue(props.lightModeImage, props.blackModeImage)}
