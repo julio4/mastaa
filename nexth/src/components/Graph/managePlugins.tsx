@@ -39,10 +39,10 @@ export default function Overview() {
         </Box>
         <Box display="flex" flexDirection="column">
           <Heading as="h2" size="md" color={useColorModeValue('gray.700', 'gray.100')}>
-            Increase Tx sponsored number
+            Sponsored Tx number
           </Heading>
           <Box display="flex" flexDirection="column" alignItems="center" justifyContent={'center'} mt={3}>
-            <Input placeholder={'15'} mt={1} />
+            <Input placeholder={'Tx amount'} mt={1} />
             <Text mt={2} >Or</Text>
             <Button colorScheme="red" mt={2}  onClick={() => {}} borderRadius={'xl'} width={'100%'}>
               Reset history

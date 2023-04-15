@@ -1,9 +1,11 @@
 import { Flex, Spacer, Box, Link, IconButton, useColorModeValue } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, CalendarIcon } from '@chakra-ui/icons'
 
+import { useRouter } from 'next/router'
 import ModeToggler from './modeToggler'
 
 const Navbar = () => {
+  const router = useRouter()
   return (
     <Flex
       as="nav"
@@ -30,22 +32,16 @@ const Navbar = () => {
       </Box>
       <Spacer />
       <Box display={{ base: 'none', md: 'block' }}>
-        
+        <CalendarIcon
+          mr={12}
+          boxSize={6}
+          onClick={() => {
+            router.push('/app/dashboard')
+          }}
+          _hover={{ cursor: 'pointer' }}
+        />
         <ModeToggler />
       </Box>
-
-      {/* <Box display={{
-        base: "none",
-        md: "block"
-      }}>
-        <Button
-          size="lg"
-          icon={<HamburgerIcon />}
-          backgroundColor="transparent"
-          _hover={{ backgroundColor: "transparent" }}
-          href="/dashboard"
-        />
-      </Box> */}
     </Flex>
   )
 }

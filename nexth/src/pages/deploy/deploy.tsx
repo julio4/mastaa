@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import contractArtifact from '../../../constants/abi/MastaaDiamond.json'
 import contractsBinaries from '../../../constants/contractsBinaries.json'
+import { Facet } from '../../../constants/Facet.js'
 import { Button, Box, useColorModeValue, Heading, Text } from '@chakra-ui/react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/store/rootState'
@@ -10,10 +11,13 @@ import { Step } from '@/types/enums'
 import { WarningIcon, CheckCircleIcon, StarIcon } from '@chakra-ui/icons'
 
 import { Divider } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { setPaymasterAddress } from '@/store/reducers/paymasterSlice'
 
 export default function DeployCard() {
   const customVariables = useSelector((state: RootState) => state.paymaster)
   const contractByteCode = contractsBinaries.MastaaDiamond
+  const router = useRouter()
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -35,32 +39,23 @@ export default function DeployCard() {
 
   async function deployContract() {
     if (factory) {
-      const arg1 = [
-        ['0xe185eb297f436084b21670e1fe477fccf0a5c021', 0, ['0x1f931c1c']],
-        ['0x635D2c973a812D1753a647D85785E0fDcfCBB4d4', 0, ['0x52ef6b2c', '0xcdffacc6', '0x7a0ed627', '0xadfca15e', '0x01ffc9a7']],
-        ['0x310BAaBc806a4044978e06Bb0cf0CF4f0C72a54c', 0, ['0x8da5cb5b', '0xf2fde38b']],
-        [
-          '0xb54Ef1a543429332618E42B7fB84A35CBe984Ba7',
-          0,
-          [
-            '0x796d4371',
-            '0xb0d691fe',
-            '0xc399ec88',
-            '0x0396cb60',
-            '0xd0e30db0',
-            '0xa9a23409',
-            '0xbb9fe6bf',
-            '0xf465c77e',
-            '0xc23a5cea',
-            '0x205c2878',
-          ],
-        ],
-      ]
-      const arg2 = [customVariables.ownerAddress]
+      let arg1: any = []
+      if (customVariables.immutability) {
+        arg1.push(Facet.Modularity)
+      }
+      if (customVariables.inspectable) {
+        arg1.push(Facet.Inspectable)
+      }
+      arg1.push(Facet.Ownership)
+      arg1.push(Facet.openBarP)
+
+      const arg2 = [customVariables.ownerAddress, '0x556D138c2B9442beb6723Ca63AE0e71457942B6F', customVariables.txPerUser]
       const contract = await factory.deploy(arg1, arg2)
+      dispatch(setPaymasterAddress(contract.address))
+      router.push("/app/dashboard")
+
     }
   }
-
   return (
     <Box height="100%" width={'80vw'} display={'flex'} justifyContent={'center'}>
       <Box

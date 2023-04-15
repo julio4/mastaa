@@ -35,8 +35,8 @@ const Inspectable = () => {
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} marginTop={'4vh'} alignItems={'center'} justifyContent={'center'}>
         <FormLabel>
-          <Highlight query="Click to make it Inspectable :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
-            Click to make it Inspectable :
+          <Highlight query="Click to make it inspectable :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
+            Click to make it inspectable :
           </Highlight>
         </FormLabel>
         <Switch bottom={0.5} size={'lg'} colorScheme="pink" onChange={setInspectableChecked} />

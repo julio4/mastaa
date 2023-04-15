@@ -22,7 +22,11 @@ export default function Overview() {
             // bg={useColorModeValue("red.100", "BlackAlpha.900")}
             colorScheme={useColorModeValue('red', 'orange')}
             _hover={{
-              bg: useColorModeValue('gray.100', 'orange.300'),
+              bg: useColorModeValue('pink.100', 'orange.300'),
+              color: useColorModeValue('red', 'gray.900'),
+            }}
+            _focus={{
+              bg: useColorModeValue('pink.100', 'orange.300'),
               color: useColorModeValue('red', 'gray.900'),
             }}
             variant={'outline'}
@@ -38,6 +42,10 @@ export default function Overview() {
               color: useColorModeValue('white', 'gray.900'),
             }}
             color={useColorModeValue('white', 'gray.900')}
+            _focus={{
+              bg: useColorModeValue('red.600', 'orange.300'),
+              color: useColorModeValue('white', 'gray.900'),
+            }}
             borderWidth={'2px'}
             borderRadius={'xl'}>
             Deposit

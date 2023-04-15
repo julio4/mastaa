@@ -35,8 +35,8 @@ const Modularity = () => {
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} marginTop={'4vh'} alignItems={'center'} justifyContent={'center'}>
         <FormLabel>
-          <Highlight query="Click to make it Modular :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
-            Click to make it Modular :
+          <Highlight query="Click to make it modular :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
+            Click to make it modular :
           </Highlight>
         </FormLabel>
         <Switch bottom={0.5} size={'lg'} colorScheme="pink" onChange={setImmutabilityChecked} />
