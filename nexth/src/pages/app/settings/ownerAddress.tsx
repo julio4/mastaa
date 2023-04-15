@@ -17,7 +17,7 @@ const OwnerAddress = () => {
 
   const moveToNextPage = () => {
     dispatch(setOwnerAddress(ownerAddressInput))
-    router.push('/app/settings/ownerAddress')
+    router.push('/deploy')
   }
   return (
     <SettingsWrapper
