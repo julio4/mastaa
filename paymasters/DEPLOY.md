@@ -22,7 +22,7 @@ Here we have:
     - facetAddress (0xcdffacc6)
     - facets (0x7a0ed627)
     - facetFunctionSelect (0xadfca15e)
-    - supportsInterface (0x01ffc9a)
+    - supportsInterface (0x01ffc9a7)
 
 - OwnershipFacet - 0x310BAaBc806a4044978e06Bb0cf0CF4f0C72a54c
   - read:
