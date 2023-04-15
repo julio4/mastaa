@@ -38,10 +38,10 @@ contract OpenBarPFacet is BasePaymaster {
             "DepositPaymaster: gas too low for postOp"
         );
         require(
-            paymasterAndData.length == 20,
+            userOp.paymasterAndData.length == 20,
             "DepositPaymaster: paymasterAndData should only contain address"
         );
-        return (0, 0);
+        return (new bytes(0), 0);
     }
 
     /**
