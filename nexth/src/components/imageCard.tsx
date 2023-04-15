@@ -1,6 +1,7 @@
-import { Box, Card, CardHeader, Heading, CardBody, Text, useColorModeValue } from '@chakra-ui/react'
-import styles from '@/styles/components/customCard.module.css'
+import { Card, useColorModeValue } from '@chakra-ui/react'
+import styles from '@/styles/components/card.module.css'
 import Image, { StaticImageData } from 'next/image'
+import { useState, useEffect } from 'react'
 
 interface CustomCardProps {
   title: string
@@ -11,6 +12,12 @@ interface CustomCardProps {
 }
 
 const ImageCard = (props: CustomCardProps) => {
+  const [showCard, setShowCard] = useState(false)
+
+  useEffect(() => {
+    setShowCard(true)
+  }, [])
+
   return (
     <Card
       display={'flex'}
@@ -21,13 +28,14 @@ const ImageCard = (props: CustomCardProps) => {
       borderRadius={'2xl'}
       transition={'transform 0.2s ease-in-out'}
       border={'1px solid black'}
-      _hover={{ transform: 'translateY(-10px);' }}
+      _hover={{ transform: 'translateY(-10px) rotate(3deg)' }}
       minWidth={'20vw'}
       maxH={'20vw'}
       maxW={'20vh'}
       backgroundColor={'#EDF2F7'}
       overflow={'hidden'}
-      onClick={() => props.onClick()}>
+      onClick={() => props.onClick()}
+      animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>
       <Image
         src={useColorModeValue(props.lightModeImage, props.blackModeImage)}
         alt="Placeholder image"
