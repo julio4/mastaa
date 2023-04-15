@@ -1,5 +1,5 @@
 import { AtSignIcon } from '@chakra-ui/icons'
-import { Input, InputGroup, InputLeftAddon } from '@chakra-ui/react'
+import { Input, InputGroup, InputLeftAddon, useColorModeValue } from '@chakra-ui/react'
 import { ChangeEvent } from 'react'
 
 interface ContractAddressProps {
@@ -9,9 +9,9 @@ interface ContractAddressProps {
 
 const ContractAddress = (props: ContractAddressProps) => {
   return (
-    <InputGroup maxWidth="40vw">
-      <InputLeftAddon borderRadius={'2xl'}> {<AtSignIcon />} </InputLeftAddon>
-      <Input placeholder={props.placeholder} borderRadius={'2xl'} onChange={props.onChange} />
+    <InputGroup borderRadius={'2xl'} mb={'10%'}  padding={10}>
+      <InputLeftAddon borderRadius={'2xl'} backgroundColor={useColorModeValue("orange.200", "red.900")}> {<AtSignIcon />} </InputLeftAddon>
+      <Input placeholder={props.placeholder} borderRadius={'2xl'} onChange={props.onChange} backgroundColor={useColorModeValue("orange.100", "red.800")}  boxShadow="lg"  _placeholder={{ color: useColorModeValue("gray.500", "gray.200") }} />
     </InputGroup>
   )
 }

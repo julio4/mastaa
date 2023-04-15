@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import contractArtifact from '../../../constants/abi/MastaaDiamond.json'
 import contractsBinaries from '../../../constants/contractsBinaries.json'
 import { Button, Box, useColorModeValue, Heading, Text } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/store/rootState'
 import { setStep } from '@/store/reducers/stepSlice'
 import { Step } from '@/types/enums'
@@ -119,9 +119,14 @@ export default function DeployCard() {
           )}
 
           <Divider orientation="horizontal" />
-          <Heading size="md" padding={10} ml={4}>
-            OwnerAddress: {customVariables.ownerAddress}
-          </Heading>
+          <Box display={'flex'} flexDirection={'row'} alignItems={'center'}>
+            <Heading size="md" padding={10} ml={4}>
+              OwnerAddress:
+            </Heading>
+
+            <Text> {customVariables.ownerAddress}</Text>
+          </Box>
+
           <Divider orientation="horizontal" />
           <Box display={'flex'} flexDirection={'row'} alignItems={'center'}>
             <Heading size="md" padding={10} ml={4}>
@@ -158,7 +163,6 @@ export default function DeployCard() {
           </Button>
         )}
       </Box>
-      <Button onClick={() => console.log('customVariables', customVariables)}>Log</Button>
     </Box>
   )
 }

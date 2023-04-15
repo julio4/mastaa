@@ -30,12 +30,12 @@ const Inspectable = () => {
   return (
     <SettingsWrapper
       title="Inspectable"
-      explanation="Allow to see which plugins are enabled on the contract"
+      explanation="Enabling this option will allow everyone to see which plugins are enabled on the contract"
       moveToPreviousPage={() => router.push('/app/settings/immutability')}
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} marginTop={'4vh'} alignItems={'center'} justifyContent={'center'}>
         <FormLabel>
-          <Highlight query="Click to make it Inspectable :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5 }}>
+          <Highlight query="Click to make it Inspectable :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
             Click to make it Inspectable :
           </Highlight>
         </FormLabel>

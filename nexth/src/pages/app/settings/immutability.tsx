@@ -30,12 +30,12 @@ const Modularity = () => {
   return (
     <SettingsWrapper
       title="Modularity"
-      explanation="Make the contract modular "
+      explanation="Enabling this option will make your paymaster modular, allowing you to add more features in the future."
       moveToPreviousPage={() => router.push('/app/settings')}
       moveToNextPage={moveToNextPage}>
       <Box display={'flex'} marginTop={'4vh'} alignItems={'center'} justifyContent={'center'}>
         <FormLabel>
-          <Highlight query="Click to make it Modular :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5 }}>
+          <Highlight query="Click to make it Modular :" styles={{ px: '2', py: '2', bg: 'orange.100', borderRadius: 5, fontSize: 'xl' }}>
             Click to make it Modular :
           </Highlight>
         </FormLabel>

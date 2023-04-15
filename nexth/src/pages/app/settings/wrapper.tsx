@@ -38,7 +38,7 @@ const SettingsWrapper = (props: SettingsWrapperProps) => {
             _hover={{ cursor: 'pointer', color: Color.VioletSettings }}
           />
           <CardBody width={'100%'} paddingX={'10vw'} margin={'auto'} textAlign={'center'}>
-            <Text width={'100%'}>{props.explanation}</Text>
+            <Text width={'100%'} fontSize={"lg"} fontWeight={"semibold"}>{props.explanation}</Text>
             {props.children}
           </CardBody>
           <ArrowRightIcon

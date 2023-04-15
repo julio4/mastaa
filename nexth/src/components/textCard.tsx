@@ -1,4 +1,4 @@
-import { Card, CardHeader, Heading, CardBody, Text } from '@chakra-ui/react'
+import { Card, CardHeader, Heading, CardBody, Text, useColorModeValue } from '@chakra-ui/react'
 import styles from '@/styles/components/card.module.css'
 import { useState, useEffect } from 'react'
 import { Color } from '@/types/theme'
@@ -24,11 +24,13 @@ const TextCard = (props: TextCardProps) => {
       borderRadius={'2xl'}
       boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.2)'}
       transition={'transform 0.2s ease-in-out'}
-      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: Color.DarkerGray } : {}}
+      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: useColorModeValue('orange.100', 'orange.800') } : {}}
       onClick={() => props.onClick()}
-      style={props.disabled ? { backgroundColor: 'lightgray', position: 'relative' } : {}}
+      style={
+        props.disabled ? { backgroundColor: useColorModeValue('orange.100', 'orange.700'), position: 'relative'} : {}
+      }
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}
-      backgroundColor={Color.LightGray}>
+      backgroundColor={useColorModeValue('orange.100', 'orange.800')}>
       <CardHeader opacity={props.disabled ? 0.6 : 1}>
         <Heading size="md"> {props.title} </Heading>
       </CardHeader>
@@ -48,7 +50,7 @@ const TextCard = (props: TextCardProps) => {
               transform: 'rotate(-30deg)',
               zIndex: 1,
             }}>
-            <Text fontSize="2xl" fontWeight="extrabold" color="black">
+            <Text fontSize="2xl" fontWeight="extrabold" color={useColorModeValue('orange.800', 'orange.100')}>
               COMING SOON
             </Text>
           </div>

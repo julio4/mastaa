@@ -30,9 +30,7 @@ const Navbar = () => {
       </Box>
       <Spacer />
       <Box display={{ base: 'none', md: 'block' }}>
-        <Link href="/about" mr={6}>
-          About
-        </Link>
+        
         <ModeToggler />
       </Box>
 
