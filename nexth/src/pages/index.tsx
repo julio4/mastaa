@@ -15,10 +15,7 @@ export default function LandingPage() {
   const [imgLand, setImgLand] = useState(landingPageImage)
 
   return (
-    <Box
-      height={'87vh'}
-      marginTop={'25px'}
-      bgGradient={useColorModeValue('radial(orange.100 5%, whiteAlpha.200 95%)', 'radial(orange.800 5%, whiteAlpha.200 95%)')}>
+    <Box height={'100vh'} bgGradient={useColorModeValue('radial(orange.100 5%, whiteAlpha.200 95%)', 'radial(orange.800 5%, whiteAlpha.200 95%)')}>
       <Box position="relative" display="flex" flexDirection="column" justifyContent="center" alignItems="center" height="100%">
         <Image src={useColorModeValue(landingPageImage, landingPageImageDark)} alt="landing page image" />
         <Flex justifyContent="center" alignItems="center">
