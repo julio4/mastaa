@@ -22,7 +22,7 @@ export default function Overview() {
             // bg={useColorModeValue("red.100", "BlackAlpha.900")}
             colorScheme={useColorModeValue('red', 'orange')}
             _hover={{
-              bg: useColorModeValue('whiteAlpha.600', 'orange.300'),
+              bg: useColorModeValue('gray.100', 'orange.300'),
               color: useColorModeValue('red', 'gray.900'),
             }}
             variant={'outline'}
@@ -46,7 +46,7 @@ export default function Overview() {
       </Box>
       <Box position="relative" display="flex" justifyContent={'space-between'} height={'15%'}>
         <Box display="flex" flexDirection="column">
-          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'whiteAlpha.600')}>
+          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
             My Balance
           </Heading>
           <Box display={'flex'} flexDirection={'row'} color={useColorModeValue('gray.700', 'gray.100')}>
@@ -57,7 +57,7 @@ export default function Overview() {
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'whiteAlpha.600')}>
+          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
             Total Spent
           </Heading>
           <Box display={'flex'} flexDirection={'row'} color={useColorModeValue('gray.700', 'gray.100')}>
@@ -68,7 +68,7 @@ export default function Overview() {
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'whiteAlpha.600')}>
+          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
             Unique Users Today
           </Heading>
           <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.100')} fontSize={'1.5em'}>
@@ -76,7 +76,7 @@ export default function Overview() {
           </Heading>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'whiteAlpha.600')}>
+          <Heading as="h2" size="md" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
             Chain Deployed
           </Heading>
           <Box display="flex" flexDirection="row">

@@ -41,7 +41,7 @@ const options = {
       text: 'Balance ETH',
       padding: {
         top: 10,
-        bottom: 10,
+        bottom: -50,
       },
       font: {
         size: 24,
@@ -121,7 +121,7 @@ export default function BalanceChart() {
   }, [])
 
   return (
-    <Box w={'100%'} h={'100%'}>
+    <Box w={'100%'} h={'100%'} mt={14}>
       <Chart ref={chartRef} type="line" data={chartData} options={options}></Chart>
     </Box>
   )
