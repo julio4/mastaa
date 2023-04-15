@@ -34,7 +34,7 @@ export default function Overview() {
             colorScheme={useColorModeValue("red", "orange")}
             _hover={{
               bg: useColorModeValue("whiteAlpha.600", "orange.300"),
-              color: useColorModeValue("white", "gray.900"),
+              color: useColorModeValue("red", "gray.900"),
             }}
             variant={"outline"}
             borderWidth={"2px"}
