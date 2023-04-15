@@ -25,11 +25,11 @@ const ImageCard = (props: CustomCardProps) => {
       alignItems={'center'}
       justifyContent={'center'}
       cursor={'pointer'}
-      boxShadow={'0px 20px 10px rgba(0, 0, 0, 0.3)'}
+      boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.2)'}
       borderRadius={'2xl'}
       transition={'transform 0.2s ease-in-out'}
       border={'1px solid black'}
-      _hover={{ transform: 'scale(1.1)' }}
+      _hover={{ transform: 'scale(1.05)' }}
       minWidth={'20vw'}
       maxH={'20vw'}
       maxW={'20vh'}
