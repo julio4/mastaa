@@ -6,13 +6,36 @@ import worldcoin from '@public/worldcoin.svg'
 import sismo from '@public/sismo.jpg'
 import gitcoin from '@public/gitcoin.svg'
 
-import { setImmutability } from '@/store/reducers/paymasterSlice'
+import { useRouter } from 'next/router'
+import { RootState } from '@/store/rootState'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { setInspectable } from '@/store/reducers/paymasterSlice'
 
 export default function Overview() {
   let immutabilityChecked = true
+  let inspectableChecked = true
   const setImmutabilityChecked = (event) => {
     immutabilityChecked = event.target.checked
   }
+  const setInspectableChecked = (event) => {
+    inspectableChecked = event.target.checked
+  }
+
+  function selectionImage() {
+    let sybilResistanceChosen = SecurityChosen.chosen
+    if (sybilResistanceChosen == 'worldcoin') {
+      return worldcoin
+    } else if (sybilResistanceChosen == 'sismo') {
+      return sismo
+    }
+    else if (sybilResistanceChosen == 'gitcoin') {
+      return gitcoin
+    }
+  }
+  const SecurityChosen = useSelector((state: RootState) => state.sybil)
+  const customizationChosen = useSelector((state: RootState) => state.paymaster)
+
 
   return (
     <Box
@@ -34,7 +57,7 @@ export default function Overview() {
             Verification System
           </Heading>
           <Box display={'flex'} flexDirection={'row'} color={useColorModeValue('gray.700', 'gray.100')} mt={'5%'}>
-            <ImageCard title={'Worldcoin'} lightModeImage={worldcoin} blackModeImage={worldcoin} summary={'blabla'} onClick={() => {}} />
+            <ImageCard title={'Worldcoin'} lightModeImage={selectionImage()} blackModeImage={selectionImage()} summary={'Logo of the Resistant Team'} onClick={() => {}} />
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
@@ -43,8 +66,8 @@ export default function Overview() {
           </Heading>
           <Box display="flex" flexDirection="column" alignItems="center" justifyContent={'center'} mt={3}>
             <Input placeholder={'Tx amount'} mt={1} />
-            <Text mt={2} >Or</Text>
-            <Button colorScheme="red" mt={2}  onClick={() => {}} borderRadius={'xl'} width={'100%'}>
+            <Text mt={2}>Or</Text>
+            <Button colorScheme="red" mt={2} onClick={() => {}} borderRadius={'xl'} width={'100%'}>
               Reset history
             </Button>
           </Box>
@@ -54,7 +77,7 @@ export default function Overview() {
             Analytics
           </Heading>
           <Box display="flex" flexDirection="column" alignItems="center" mt={'30%'}>
-            <Switch size={'lg'} colorScheme="red" onChange={setImmutabilityChecked} />
+            <Switch size={'lg'} colorScheme="red" onChange={setImmutabilityChecked} isChecked={customizationChosen.immutability} />
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
@@ -62,7 +85,7 @@ export default function Overview() {
             Inspectable
           </Heading>
           <Box display="flex" flexDirection="column" alignItems="center" mt={'30%'}>
-            <Switch size={'lg'} colorScheme="red" onChange={setImmutabilityChecked} />
+            <Switch size={'lg'} colorScheme="red" onChange={setInspectableChecked} isChecked={customizationChosen.inspectable} />
           </Box>
         </Box>
       </Box>
