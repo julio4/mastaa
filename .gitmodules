@@ -15,3 +15,15 @@
 [submodule "zkdrop/contracts/lib/sismo-connect-packages"]
 	path = zkdrop/contracts/lib/sismo-connect-packages
 	url = https://github.com/sismo-core/sismo-connect-packages
+
+
+## For Sismo
+[submodule "sismo/lib/openzeppelin-contracts"]
+	path = simo/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "sismo/lib/forge-std"]
+	path = sismo/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "sismo/lib/sismo-connect-packages"]
+	path = sismo/lib/sismo-connect-packages
+	url = https://github.com/sismo-core/sismo-connect-packages
