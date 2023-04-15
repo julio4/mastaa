@@ -3,8 +3,18 @@ import { Box, Heading, SimpleGrid } from '@chakra-ui/react'
 import styles from '@/styles/sybil-protection/index.module.css'
 import Layout from '@/components/Layout/layout'
 import CustomCard from '@/components/customCard'
+import { useEffect } from 'react'
+
+import { useDispatch } from 'react-redux'
+import { setStep } from '@/store/reducers/stepSlice'
 
 const Sybil = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setStep(1))
+  }, [])
+
   return (
     <Layout>
       <Box className={styles.wrapper}>

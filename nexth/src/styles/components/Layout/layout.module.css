@@ -1,4 +1,13 @@
 
+.color {
+    /*
+    background-color: #fff3eb;
+    background-image: linear-gradient(51deg, #fff3eb 0%, #fff5ad 100%);
+    */
+    background-color: #f7f5ef;
+    background-image: linear-gradient(51deg, #f7f5ef 0%, #fffcd6 100%);
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
