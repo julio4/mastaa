@@ -4,11 +4,12 @@ import styles from '@/styles/components/customCard.module.css'
 interface CustomCardProps {
   title: string
   summary: string
+  onClick: () => any
 }
 
 const CustomCard = (props: CustomCardProps) => {
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} onClick={() => props.onClick()}>
       <CardHeader>
         <Heading size="md"> {props.title} </Heading>
       </CardHeader>

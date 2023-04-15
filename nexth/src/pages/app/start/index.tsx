@@ -11,19 +11,11 @@ import styles from '@/styles/start/index.module.css'
 import Layout from '@/components/Layout/layout'
 
 const Start = () => {
-  const [activeStep, setActiveStep] = useState(Step.Step1)
-
-  // const updateActiveStep = () => {
-  //     if (activeStep === Step.Step3) setActiveStep(Step.Step2);
-  //     else setActiveStep(Step.Step1);
-  // };
-
   return (
     <Layout>
       <Box className={styles.main}>
         <ContractAddress />
-        <Options setActiveStep={setActiveStep} />
-        {/* <Box className={styles.chevronIcon} onClick={updateActiveStep}> */}
+        <Options />
         <Box className={styles.chevronIcon}>
           <ChevronLeftIcon />
         </Box>
