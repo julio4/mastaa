@@ -20,7 +20,7 @@ const Sybil = () => {
 
   return (
     <Layout>
-      <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'7vh'} padding={'10vh 0 0 0'}>
+      <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'7vh'} padding={'10vh 0 0 0'} flexWrap={'wrap'}>
         <Heading as="h4" size="lg">
           Choose a sybil protection
         </Heading>

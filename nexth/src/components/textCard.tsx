@@ -24,7 +24,7 @@ const TextCard = (props: TextCardProps) => {
       borderRadius={'2xl'}
       boxShadow={'0px 20px 10px rgba(0, 0, 0, 0.3)'}
       transition={'transform 0.2s ease-in-out'}
-      _hover={!props.disabled ? { transform: 'translateY(-10px) rotate(3deg)', backgroundColor: '#EDF2F7' } : {}}
+      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: '#EDF2F7' } : {}}
       onClick={() => props.onClick()}
       style={props.disabled ? { backgroundColor: 'lightgray', position: 'relative' } : {}}
       animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>

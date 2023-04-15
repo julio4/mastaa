@@ -1,7 +1,7 @@
 
 @keyframes growRotate {
     from {
-        transform: scale(0.95);
+        transform: scale(0.90);
         opacity: 0;
     }
     to {
