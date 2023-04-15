@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       {/* <Navbar /> */}
       <main className={styles.main}>
-        <ProgressionBar activeStep={activeStep} />
+        {/* <ProgressionBar activeStep={activeStep} /> */}
         {children}
       </main>
     </>
