@@ -1,25 +1,26 @@
-import { Box, useColorModeValue, Heading, Switch } from '@chakra-ui/react'
+import { Box, useColorModeValue, Heading } from '@chakra-ui/react'
 
 import Layout from '@/components/Layout/layout_light'
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
+import ContractAddress from '../start/contractAddress'
+import { setOwnerAddress } from '@/store/reducers/paymasterSlice'
 import { useDispatch } from 'react-redux'
-import { setImmutability } from '@/store/reducers/paymasterSlice'
+import { ChangeEvent } from 'react'
 
-const Immutability = () => {
+const OwnerAddress = () => {
   const router = useRouter()
-  let immutabilityChecked = false
+  let ownerAddress = ''
   const dispatch = useDispatch()
 
-  const setImmutabilityChecked = (event) => {
-    immutabilityChecked = event.target.checked
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    ownerAddress = event.target.value
   }
 
   const moveToNextPage = () => {
-    dispatch(setImmutability(immutabilityChecked))
-    router.push('/app/settings/inspectable')
+    dispatch(setOwnerAddress(ownerAddress))
+    router.push('/app/settings/ownerAddress')
   }
-
   return (
     <Layout>
       <Box height="100%" width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -35,7 +36,7 @@ const Immutability = () => {
           boxShadow="lg"
           margin={10}
           height={'80%'}>
-          <ArrowLeftIcon color="pink" boxSize={7} onClick={() => router.push('/app/settings')} _hover={{ cursor: 'pointer' }} />
+          <ArrowLeftIcon color="pink" boxSize={7} onClick={() => router.push('/app/settings/inspectable')} _hover={{ cursor: 'pointer' }} />
           <Box
             position="relative"
             width={'100%'}
@@ -45,11 +46,11 @@ const Immutability = () => {
             padding="10"
             bg={useColorModeValue('white', 'blackAlpha.600')}
             margin={10}
-            height={'100%'}>
+            height={'80%'}>
             <Heading as="h2" size="2xl" fontWeight="bold" color={useColorModeValue('black', 'white')} textAlign="center" mb={'5%'} mt={'-5%'}>
-              Immutability
+              Owner Address
             </Heading>
-            <Switch marginTop={'8vh'} size={'lg'} colorScheme="pink" onChange={setImmutabilityChecked} />
+            <ContractAddress onChange={handleInputChange} />
           </Box>
           <ArrowRightIcon color="pink" boxSize={7} onClick={moveToNextPage} _hover={{ cursor: 'pointer' }} />
         </Box>
@@ -58,4 +59,4 @@ const Immutability = () => {
   )
 }
 
-export default Immutability
+export default OwnerAddress
