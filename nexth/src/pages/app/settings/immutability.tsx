@@ -1,7 +1,6 @@
 import { use, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 
-
 import { Box, useColorModeValue, Heading, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Switch, Text } from '@chakra-ui/react'
 
 import { ChevronLeftIcon, AddIcon, MinusIcon, ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons'
@@ -10,7 +9,6 @@ import styles from '@/styles/start/index.module.css'
 import Layout from '@/components/Layout/layout_light'
 
 const Start = () => {
-
   const router = useRouter()
   const [enableTxCustom, setEnableTxCustom] = useState(false)
   const [sliderValue, setSliderValue] = useState(30)
@@ -50,18 +48,16 @@ const Start = () => {
           margin={10}
           height={'80%'}>
           <ArrowLeftIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue + 1)} _hover={{ cursor: 'pointer' }} />
-          <Box 
-                    position="relative"
-                    width={'100%'}
-                    display="flex"
-                    flexDirection={'column'}
-                    alignItems="center"
-                    padding="10"
-                    bg={useColorModeValue('white', 'blackAlpha.600')}
-                    margin={10}
-                    height={'80%'}>
-          
-          
+          <Box
+            position="relative"
+            width={'100%'}
+            display="flex"
+            flexDirection={'column'}
+            alignItems="center"
+            padding="10"
+            bg={useColorModeValue('white', 'blackAlpha.600')}
+            margin={10}
+            height={'80%'}>
             <Heading as="h1" size="2xl" fontWeight="bold" color={useColorModeValue('black', 'white')} textAlign="center" mb={'5%'} mt={'-5%'}>
               Customize your paymaster
             </Heading>
@@ -106,8 +102,7 @@ const Start = () => {
               </Text>
             </Box>
           </Box>
-        <ArrowRightIcon color="pink" boxSize={7} 
-              onClick={() => router.push('/app/settings/immutability')} _hover={{ cursor: 'pointer' }} />
+          <ArrowRightIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue + 1)} _hover={{ cursor: 'pointer' }} />
         </Box>
       </Box>
     </Layout>

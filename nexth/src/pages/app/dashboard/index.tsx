@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout/layout";
+import Layout from "@/components/Layout/layout_light";
 import Dashboard from "./dashboard";
 import { Button } from "@chakra-ui/react";
 
