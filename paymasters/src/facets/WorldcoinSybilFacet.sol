@@ -107,6 +107,7 @@ contract WorldcoinSybilFacet is BasePaymaster {
         pure
         returns (uint256 root, uint256 nullifierHash, uint256[8] memory proof)
     {
+        (proof);
         root = uint256(bytes32(paymasterAndData[ROOT_OFFSET:NULLIFIER_OFFSET]));
         nullifierHash = uint256(
             bytes32(paymasterAndData[NULLIFIER_OFFSET:PROOF_OFFSET])

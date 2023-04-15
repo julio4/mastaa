@@ -15,15 +15,7 @@ contract MaxTxPFacet is BasePaymaster {
     //calculated cost of the postOp
     uint256 public constant COST_OF_POST = 35000;
 
-    constructor(
-        IEntryPoint _entryPoint,
-        address _targetContract,
-        uint256 _maxTx
-    ) BasePaymaster(_entryPoint) {
-        LibMastaa.SponsorStorage storage ms = LibMastaa.getSponsorStorage();
-        ms.targetContract = _targetContract;
-        ms.maxTxPerUser = _maxTx;
-    }
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint) { }
 
     /**
      * Validate the request (for everyone for this contract):

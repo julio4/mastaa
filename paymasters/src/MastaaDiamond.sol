@@ -10,6 +10,7 @@ pragma experimental ABIEncoderV2;
 /******************************************************************************/
 
 import "../lib/LibDiamond.sol";
+import "../lib/LibMastaa.sol";
 import "../interfaces/IDiamondLoupe.sol";
 import "../interfaces/IDiamondCut.sol";
 import "../interfaces/IERC173.sol";
@@ -20,6 +21,8 @@ contract MastaaDiamond {
     // this avoids stack too deep errors
     struct DiamondArgs {
         address owner;
+        address targetContract;
+        uint256 maxTxPerUser;
     }
 
     constructor(
@@ -36,6 +39,11 @@ contract MastaaDiamond {
         ds.supportedInterfaces[type(IDiamondCut).interfaceId] = true;
         ds.supportedInterfaces[type(IDiamondLoupe).interfaceId] = true;
         ds.supportedInterfaces[type(IERC173).interfaceId] = true;
+
+        // Sponsor storage
+        LibMastaa.SponsorStorage storage ss = LibMastaa.getSponsorStorage();
+        ss.targetContract = _args.targetContract;
+        ss.maxTxPerUser = _args.maxTxPerUser;
     }
 
     // Find facet for function that is called and execute the
