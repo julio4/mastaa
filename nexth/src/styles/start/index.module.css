@@ -1,0 +1,21 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7vh;
+    padding: 10vh 0 0 0;
+}
+
+.chevronIcon {
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    background-color: #EDF2F7;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.chevronIcon:hover {
+    background-color: #E2E8F0;
+}

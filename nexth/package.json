@@ -39,7 +39,19 @@
     "react-icons": "^4.7.1",
     "siwe": "^1.1.6",
     "usehooks-ts": "^2.9.1",
-    "wagmi": "^0.11.6"
+    "wagmi": "^0.11.6",
+    "@sismo-core/sismo-connect-react": "^0.0.8",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.34",
+    "@types/react-dom": "18.0.11",
+    "chart.js": "^4.2.1",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "faker": "^6.6.6",
+    "net": "^1.0.2",
+    "next-auth": "^4.22.0",
+    "react-chartjs-2": "^5.2.0",
+    "typescript": "5.0.4"
   },
   "devDependencies": {
     "@tsconfig/next": "^1.0.4",

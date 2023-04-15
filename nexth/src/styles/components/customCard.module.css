@@ -1,0 +1,14 @@
+
+.card {
+    min-width: 20vw;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* padding: 20px; */
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    background-color: #EDF2F7;
+    transform: translateY(-10px);
+    /* background-color: #E2E8F0; */
+}

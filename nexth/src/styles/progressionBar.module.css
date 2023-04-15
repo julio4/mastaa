@@ -1,0 +1,18 @@
+
+.item, .selectedItem {
+    width: fit-content;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    background-color: #EDF2F7;
+}
+
+.selectedItem {
+    background-color: lightcoral;
+}
+
+.separator {
+    width: 80px;
+    height: 1px;
+    border-radius: 10px;
+    background-color: lightgray;
+}

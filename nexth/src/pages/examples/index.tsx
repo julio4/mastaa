@@ -1,6 +1,6 @@
-import { Head } from 'components/layout/Head'
-import { HeadingComponent } from 'components/layout/HeadingComponent'
-import { CardList } from 'components/layout/CardList'
+import { Head } from '@/components/layout/Head'
+import { HeadingComponent } from '@/components/layout/HeadingComponent'
+import { CardList } from '@/components/layout/CardList'
 import { Code, Text } from '@chakra-ui/react'
 
 import SignIcon from 'assets/icons/fingerprint.png'
