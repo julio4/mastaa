@@ -7,6 +7,7 @@ import SettingsWrapper from './wrapper'
 import { Box } from '@chakra-ui/react'
 import { setStep } from '@/store/reducers/stepSlice'
 import { Step } from '@/types/enums'
+import { useToast } from '@chakra-ui/react'
 
 const OwnerAddress = () => {
   const router = useRouter()
@@ -17,9 +18,22 @@ const OwnerAddress = () => {
     setOwnerAddressInput(event.target.value)
   }
 
+  const toast = useToast()
+
   const moveToNextPage = () => {
-    dispatch(setOwnerAddress(ownerAddressInput))
-    router.push('/deploy')
+    const addressRegexp = /^0x[a-fA-F0-9]{40}$/
+    if (ownerAddressInput.match(addressRegexp)) {
+      dispatch(setOwnerAddress(ownerAddressInput))
+      router.push('/deploy')
+    } else {
+      toast({
+        title: 'Wrong address format',
+        description: "Address must start by '0x', contain 40 characters (case-insensitive letters and numbers)",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+    }
   }
 
   useEffect(() => {
