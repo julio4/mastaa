@@ -25,9 +25,9 @@ const Sybil = () => {
           Choose a sybil protection
         </Heading>
         <SimpleGrid spacing={20} columns={3} paddingX={20}>
-          <ImageCard lightModeImage={worldcoin} blackModeImage={worldcoin} />
-          <ImageCard lightModeImage={sismo} blackModeImage={sismo} />
-          <ImageCard lightModeImage={gitcoin} blackModeImage={gitcoin} />
+          <ImageCard lightModeImage={worldcoin} blackModeImage={worldcoin} disabled={false} />
+          <ImageCard lightModeImage={sismo} blackModeImage={sismo} disabled={false} />
+          <ImageCard lightModeImage={gitcoin} blackModeImage={gitcoin} disabled={true} />
         </SimpleGrid>
       </Box>
     </Layout>
