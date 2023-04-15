@@ -22,12 +22,13 @@ const TextCard = (props: TextCardProps) => {
       minWidth={'20vw'}
       cursor={!props.disabled ? 'pointer' : ''}
       borderRadius={'2xl'}
-      boxShadow={'0px 20px 10px rgba(0, 0, 0, 0.3)'}
+      boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.2)'}
       transition={'transform 0.2s ease-in-out'}
-      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: Color.LightGray } : {}}
+      _hover={!props.disabled ? { transform: 'scale(1.1)', backgroundColor: Color.DarkerGray } : {}}
       onClick={() => props.onClick()}
       style={props.disabled ? { backgroundColor: 'lightgray', position: 'relative' } : {}}
-      animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}>
+      animation={showCard ? `${styles.growRotate} 0.5s linear` : ''}
+      backgroundColor={Color.LightGray}>
       <CardHeader opacity={props.disabled ? 0.6 : 1}>
         <Heading size="md"> {props.title} </Heading>
       </CardHeader>

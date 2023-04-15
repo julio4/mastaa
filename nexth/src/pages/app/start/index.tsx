@@ -27,7 +27,7 @@ const Start = () => {
         </Heading>
         <ContractAddress placeholder="Contract address" onChange={() => {}} />
         <Options />
-        <Box className={styles.chevronIcon}>
+        <Box className={styles.chevronIcon} visibility={'hidden'}>
           <ChevronLeftIcon />
         </Box>
       </Box>

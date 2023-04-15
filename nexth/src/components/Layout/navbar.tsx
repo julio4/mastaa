@@ -10,6 +10,7 @@ const Navbar = () => {
       align="center"
       justify="space-between"
       wrap="wrap"
+      boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.2)'}
       padding="1.5rem"
       bgGradient={useColorModeValue('linear(to-r, orange.100, whiteAlpha.200)', 'linear(to-r, orange.800, whiteAlpha.400)')}
       color={useColorModeValue('gray.700', 'gray.200')}>
@@ -29,14 +30,8 @@ const Navbar = () => {
       </Box>
       <Spacer />
       <Box display={{ base: 'none', md: 'block' }}>
-        <Link href="/" mr={6}>
-          Home
-        </Link>
         <Link href="/about" mr={6}>
           About
-        </Link>
-        <Link href="/contact" mr={6}>
-          Contact
         </Link>
         <ModeToggler />
       </Box>
