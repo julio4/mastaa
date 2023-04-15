@@ -5,12 +5,13 @@ import { useIsMounted } from '@/hooks/useIsMounted'
 import { Seo } from '@/components/layout/Seo'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const isMounted = useIsMounted()
+  // const isMounted = useIsMounted()
 
   return (
     <ChakraProvider>
       <Seo />
-      <Web3Provider>{isMounted && <Component {...pageProps} />}</Web3Provider>
+      {/* <Web3Provider>{isMounted && <Component {...pageProps} />}</Web3Provider> */}
+      <Component {...pageProps} />
     </ChakraProvider>
   )
 }
