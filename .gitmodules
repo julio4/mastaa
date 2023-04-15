@@ -1,0 +1,17 @@
+[submodule "paymasters/lib/forge-std"]
+	path = paymasters/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+
+[submodule "paymasters/lib/openzeppelin-contracts"]
+	path = paymasters/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+
+[submodule "zkdrop/contracts/lib/openzeppelin-contracts"]
+	path = zkdrop/contracts/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "zkdrop/contracts/lib/forge-std"]
+	path = zkdrop/contracts/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "zkdrop/contracts/lib/sismo-connect-packages"]
+	path = zkdrop/contracts/lib/sismo-connect-packages
+	url = https://github.com/sismo-core/sismo-connect-packages
