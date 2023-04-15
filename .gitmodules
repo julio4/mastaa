@@ -16,6 +16,11 @@
 	path = zkdrop/contracts/lib/sismo-connect-packages
 	url = https://github.com/sismo-core/sismo-connect-packages
 
+## For Worldcoin
+[submodule "paymasters/lib/world-id-contracts"]
+	path = paymasters/lib/world-id-contracts
+	url = https://github.com/worldcoin/world-id-contracts
+	branch = 985aba6
 
 ## For Sismo
 [submodule "sismo/lib/forge-std"]
