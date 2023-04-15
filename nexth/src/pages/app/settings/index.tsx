@@ -39,7 +39,11 @@ const TransactionsPerUser = () => {
   }
 
   return (
-    <SettingsWrapper title="Customize your paymaster" moveToPreviousPage={() => router.push('/app/sybil-protection')} moveToNextPage={moveToNextPage}>
+    <SettingsWrapper
+      title="Customize your paymaster"
+      explanation="Choose the number of transactions you want to sponsor"
+      moveToPreviousPage={() => router.push('/app/sybil-protection')}
+      moveToNextPage={moveToNextPage}>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} width={'100%'} height={'10%'} marginTop={10}>
         <Box mx={6}>
           <MinusIcon color="pink" boxSize={7} onClick={() => setSliderValue(sliderValue - 1)} _hover={{ cursor: 'pointer' }} />

@@ -4,6 +4,7 @@ import { setOwnerAddress } from '@/store/reducers/paymasterSlice'
 import { useDispatch } from 'react-redux'
 import { ChangeEvent, useState } from 'react'
 import SettingsWrapper from './wrapper'
+import { Box } from '@chakra-ui/react'
 
 const OwnerAddress = () => {
   const router = useRouter()
@@ -19,8 +20,14 @@ const OwnerAddress = () => {
     router.push('/app/settings/ownerAddress')
   }
   return (
-    <SettingsWrapper title="Owner Address" moveToPreviousPage={() => router.push('/app/settings/inspectable')} moveToNextPage={moveToNextPage}>
-      <ContractAddress onChange={handleInputChange} />
+    <SettingsWrapper
+      title="Owner Address"
+      explanation="Enter the owner address"
+      moveToPreviousPage={() => router.push('/app/settings/inspectable')}
+      moveToNextPage={moveToNextPage}>
+      <Box marginTop={'5vh'}>
+        <ContractAddress placeholder="Owner address" onChange={handleInputChange} />
+      </Box>
     </SettingsWrapper>
   )
 }

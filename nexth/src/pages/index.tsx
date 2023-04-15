@@ -15,7 +15,10 @@ export default function LandingPage() {
   const [imgLand, setImgLand] = useState(landingPageImage)
 
   return (
-    <Box height={'100vh'} bgGradient={useColorModeValue('radial(orange.100 5%, whiteAlpha.200 95%)', 'radial(orange.800 5%, whiteAlpha.200 95%)')}>
+    <Box
+      height={'87vh'}
+      marginTop={'25px'}
+      bgGradient={useColorModeValue('radial(orange.100 5%, whiteAlpha.200 95%)', 'radial(orange.800 5%, whiteAlpha.200 95%)')}>
       <Box position="relative" display="flex" flexDirection="column" justifyContent="center" alignItems="center" height="100%">
         <Image src={useColorModeValue(landingPageImage, landingPageImageDark)} alt="landing page image" />
         <Flex justifyContent="center" alignItems="center">
@@ -23,8 +26,8 @@ export default function LandingPage() {
             <Heading as="h1" size="4xl" mb={4} color={useColorModeValue('gray.700', 'gray.100')}>
               Mastaa マスター
             </Heading>
-            <Heading as="h2" textAlign="center" maxW="75%" size="md" mb={6} color={useColorModeValue('gray.700', 'gray.200')}>
-              The smart wallet that adapts to your needs. Customize your experience with our easy-to-use plugins.
+            <Heading as="h2" textAlign="center" size="md" mb={6} color={useColorModeValue('gray.700', 'gray.200')}>
+              A decentralized and adaptable paymaster solution
             </Heading>
             <Button
               size="lg"

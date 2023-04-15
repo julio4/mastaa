@@ -43,7 +43,7 @@ export default function Footer() {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
           <Text cursor="select" color={useColorModeValue('gray.600', 'gray.100')} fontSize="sm" pl="20px">
-            © 2023 KS. All rights reserved
+            © 2023 Mastaa マスター. All rights reserved
           </Text>
 
           <Stack direction={'row'} spacing={6} pr="20px">

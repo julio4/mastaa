@@ -25,7 +25,7 @@ const Start = () => {
         <Heading as="h4" size="lg">
           Choose if you want to sponsor gas or enable swap
         </Heading>
-        <ContractAddress />
+        <ContractAddress placeholder="Contract address" onChange={() => {}} />
         <Options />
         <Box className={styles.chevronIcon}>
           <ChevronLeftIcon />

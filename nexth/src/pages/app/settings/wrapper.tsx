@@ -1,10 +1,11 @@
 import Layout from '@/components/Layout/layout_light'
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
-import { useColorModeValue, Box, Heading } from '@chakra-ui/react'
+import { useColorModeValue, Box, Heading, Text, Card, CardBody } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 
 interface SettingsWrapperProps {
   title: string
+  explanation: string
   moveToPreviousPage: () => void
   moveToNextPage: () => void
   children: ReactNode
@@ -13,38 +14,44 @@ interface SettingsWrapperProps {
 const SettingsWrapper = (props: SettingsWrapperProps) => {
   return (
     <Layout>
-      <Box height="100%" width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-        <Box
-          position="relative"
-          width={'80vw'}
-          display="flex"
-          alignItems="center"
-          padding="10"
-          pt={20}
-          borderRadius={'2xl'}
-          bg={useColorModeValue('white', 'blackAlpha.600')}
-          boxShadow="lg"
-          margin={10}
-          height={'80%'}>
-          <ArrowLeftIcon color="pink" boxSize={7} onClick={props.moveToPreviousPage} _hover={{ cursor: 'pointer' }} />
-          <Box
-            position="relative"
-            width={'100%'}
-            display="flex"
-            flexDirection={'column'}
-            alignItems="center"
-            padding="10"
-            bg={useColorModeValue('white', 'blackAlpha.600')}
-            margin={10}
-            height={'80%'}>
-            <Heading as="h2" size="2xl" fontWeight="bold" color={useColorModeValue('black', 'white')} textAlign="center" mb={'5%'} mt={'-5%'}>
-              {props.title}
-            </Heading>
+      <Card
+        width={'100%'}
+        margin={'70px'}
+        boxShadow={'3px 7px 10px rgba(0, 0, 0, 0.3)'}
+        borderRadius={'2xl'}
+        border={'1px solid black'}
+        backgroundColor={'white'}
+        display={'flex'}
+        alignItems={'center'}
+        position={'relative'}>
+        <Heading as="h2" size="2xl" marginTop={'14vh'} fontWeight="bold" color={useColorModeValue('black', 'white')} textAlign="center">
+          {props.title}
+        </Heading>
+        <Box>
+          <ArrowLeftIcon
+            color="pink"
+            boxSize={7}
+            position={'absolute'}
+            left={'6vw'}
+            top="50%"
+            onClick={props.moveToPreviousPage}
+            _hover={{ cursor: 'pointer' }}
+          />
+          <CardBody width={'100%'} paddingX={'10vw'} margin={'auto'} textAlign={'center'}>
+            <Text width={'100%'}>{props.explanation}</Text>
             {props.children}
-          </Box>
-          <ArrowRightIcon color="pink" boxSize={7} onClick={props.moveToNextPage} _hover={{ cursor: 'pointer' }} />
+          </CardBody>
+          <ArrowRightIcon
+            color="pink"
+            boxSize={7}
+            position={'absolute'}
+            right={'6vw'}
+            top="50%"
+            onClick={props.moveToNextPage}
+            _hover={{ cursor: 'pointer' }}
+          />
         </Box>
-      </Box>
+      </Card>
     </Layout>
   )
 }
